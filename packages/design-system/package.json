@@ -1,8 +1,8 @@
 {
-  "name": "ui",
+  "name": "design-system",
   "version": "0.1.0",
   "private": true,
-  "description": "ui",
+  "description": "svelte design system components",
   "type": "module",
   "module": "index.ts",
   "svelte": "index.ts",

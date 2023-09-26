@@ -28,8 +28,8 @@ configureWunderGraphApplication({
     ...cors.allowAll,
     allowedOrigins: process.env.NODE_ENV === 'production'
       ? [
-        'https://app.andert.me'
-
+        'https://app.andert.me',
+        'https://wallet.andert.me'
       ]
       : [
         'http://localhost:3000',
