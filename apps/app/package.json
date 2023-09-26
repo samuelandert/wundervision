@@ -15,8 +15,8 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "design-system": "*",
-    "wundergraph-client": "*"
+    "design-system": "^0.2.0",
+    "generated-wundergraph": "^0.2.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.28.1",
