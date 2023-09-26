@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -15,8 +15,8 @@
     "test:unit": "vitest"
   },
   "dependencies": {
-    "design-system": "^0.2.0",
-    "generated-wundergraph": "^0.2.0"
+    "design-system": "^0.2.1",
+    "generated-wundergraph": "^0.2.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.28.1",
