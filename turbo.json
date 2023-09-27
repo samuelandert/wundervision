@@ -12,7 +12,7 @@
         "generated/**"
       ]
     },
-    "app#build": {
+    "slube#build": {
       "dependsOn": [
         "^api#build"
       ],

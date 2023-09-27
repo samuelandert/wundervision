@@ -8,6 +8,7 @@
 	import SelectInput from '../inputfields/SelectInput.svelte';
 	import TextAreaInput from '../inputfields/TextAreaInput.svelte';
 	import NumberInput from '../inputfields/NumberInput.svelte';
+	import CardSelectInput from '../inputfields/CardSelectInput.svelte';
 	import { derived, writable } from 'svelte/store';
 	import Stepper from './Stepper.svelte';
 
@@ -158,15 +159,15 @@
 		{#if $state.matches('input')}
 			<div class="mb-4">
 				<div class="mb-6">
-					<h2 class="mb-2 text-5xl font-semibold text-center text-white">
+					<h2 class="mb-2 text-5xl font-semibold text-center text-primary-500">
 						{fields[$state.context.currentField].title}
 					</h2>
 					{#if $errors[fields[$state.context.currentField].name]}
-						<p class="text-2xl text-center text-yellow-500">
+						<p class="text-2xl text-center text-warning-500">
 							{$errors[fields[$state.context.currentField].name]}
 						</p>
 					{:else}
-						<p class="text-2xl text-center text-white">
+						<p class="text-2xl text-center text-secondary-500">
 							{fields[$state.context.currentField].description}
 						</p>
 					{/if}
@@ -189,19 +190,21 @@
 					<ToggleInput {childInput} />
 				{:else if fields[$state.context.currentField].type === 'number'}
 					<NumberInput {childInput} />
+				{:else if fields[$state.context.currentField].type === 'cardSelect'}
+					<CardSelectInput {childInput} />
 				{/if}
 			</div>
 		{/if}
 		{#if $state.matches('summary')}
 			<div class="mb-4">
-				<h2 class="mb-2 text-5xl font-semibold text-center text-white">Summary</h2>
-				<p class="text-2xl text-center text-white">Please verify your summary</p>
+				<h2 class="mb-2 text-5xl font-semibold text-center text-primary-500">Summary</h2>
+				<p class="text-2xl text-center text-secondary-500">Please verify your summary</p>
 				<dl class="list-dl">
 					{#each Object.entries($state.context.formData) as [key, value]}
 						<div>
 							<span class="flex-auto">
-								<dt class="text-sm text-gray-300">{key}</dt>
-								<dd class="text-2xl font-semibold">{value}</dd>
+								<dt class="text-sm text-secondary-300">{key}</dt>
+								<dd class="text-2xl text-secondary-500 font-semibold">{value}</dd>
 							</span>
 						</div>
 					{/each}
@@ -218,7 +221,7 @@
 						<button
 							type="button"
 							on:click={() => send(action)}
-							class="btn btn-base variant-filled"
+							class="btn btn-base variant-filled-secondary"
 							disabled={$state.context.currentField === 0}
 						>
 							{action}
@@ -241,7 +244,7 @@
 						<button
 							type="button"
 							on:click={() => handleNext()}
-							class="btn btn-base variant-filled"
+							class="btn variant-filled-primary btn-sm sm:btn-base"
 							disabled={$errors[fields[$state.context.currentField].name]}
 						>
 							{action}

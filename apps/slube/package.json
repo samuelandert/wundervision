@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "slube",
   "version": "0.2.1",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@iconify/svelte": "^3.1.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@xstate/svelte": "^2.1.0",
     "design-system": "^0.2.1",
     "generated-wundergraph": "^0.2.1",

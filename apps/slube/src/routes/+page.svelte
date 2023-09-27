@@ -9,12 +9,11 @@
 
 <Header />
 
-<div class="container h-full mx-auto flex justify-center items-center">
+<div class="container p-12 mx-auto flex justify-center items-center">
 	<div class="space-y-6 text-center flex flex-col items-center">
-		<Card />
 		{#each data.countries_countries ?? [] as country}
 			<p>
-				Wundergraph Query:
+				Wundergraph Query:<br />
 				{country.name}
 			</p>
 		{/each}

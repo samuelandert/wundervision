@@ -14,7 +14,7 @@
 	const drawerStore = getDrawerStore();
 </script>
 
-<Drawer>
+<Drawer bgDrawer="bg-white" height="h-auto">
 	<Composer composer={$drawerStore.meta} />
 </Drawer>
 
