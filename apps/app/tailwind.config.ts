@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss'
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import { skeleton } from '@skeletonlabs/tw-plugin'
+import { slubeTheme } from './slube-theme'
 
 export default {
 	darkMode: 'class',
@@ -15,13 +16,17 @@ export default {
 		typography,
 		skeleton({
 			themes: {
-				preset: [
-					{
-						name: 'wintry',
-						enhancements: true,
-					},
+				custom: [
+					slubeTheme
 				],
+				// preset: [
+				// 	{
+				// 		name: 'wintry',
+				// 		enhancements: true,
+				// 	},
+				// ],
 			},
+
 		}),
 	],
 } satisfies Config;

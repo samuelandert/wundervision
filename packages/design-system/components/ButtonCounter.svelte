@@ -6,5 +6,5 @@
   }
 </script>
 
-<button on:click={handleClick} class="btn variant-filled"> Click Me</button>
-<h1>{count}</h1>
+<button on:click={handleClick} class="btn variant-filled">Click Me</button>
+<h1 class="text-2xl">{count}</h1>
