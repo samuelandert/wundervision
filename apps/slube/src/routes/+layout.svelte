@@ -15,7 +15,7 @@
 </script>
 
 <Drawer bgDrawer="bg-white" height="h-auto">
-	<Composer composer={$drawerStore.meta} />
+	<!-- <Composer composer={$drawerStore.meta} /> -->
 </Drawer>
 
 <AppShell>
