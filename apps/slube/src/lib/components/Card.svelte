@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let name = '';
 	export let description = '';
+	export let image = '';
 	export let selected = false;
 </script>
 
@@ -11,7 +12,7 @@
 >
 	<div class="row-start-1 row-end-2 relative">
 		<div style="padding-bottom: 50%;" />
-		<img class="absolute top-0 left-0 w-full h-full rounded-2xl object-cover" src="{name}.png" />
+		<img class="absolute top-0 left-0 w-full h-full rounded-2xl object-cover" src={image} />
 	</div>
 	<div
 		class="pt-2 row-start-2 row-end-3 text-xl font-semibold font-['Poppins'] leading-normal text-left"
@@ -24,13 +25,10 @@
 	>
 		{description}
 	</div>
-	<div class="row-start-4 row-end-5 justify-center items-center flex">
-		<div class="text-xs font-semibold font-['Poppins'] inline-block">More info</div>
-	</div>
 </div>
 
 <style>
 	.grid-rows-card {
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: auto 1fr;
 	}
 </style>

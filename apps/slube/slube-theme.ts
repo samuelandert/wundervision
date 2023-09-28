@@ -5,8 +5,8 @@ export const slubeTheme: CustomThemeConfig = {
     name: 'slube-theme',
     properties: {
         // =~= Theme Properties =~=
-        "--theme-font-family-base": `system-ui`,
-        "--theme-font-family-heading": `system-ui`,
+        "--theme-font-family-base": `'Poppins', sans-serif`,
+        "--theme-font-family-heading": `'Poppins', sans-serif`,
         "--theme-font-color-base": "0 0 0",
         "--theme-font-color-dark": "255 255 255",
         "--theme-rounded-base": "16px",

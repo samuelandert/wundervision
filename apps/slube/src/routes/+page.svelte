@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Card from '$lib/components/Card.svelte';
 	import Header from '$lib/components/Header.svelte';
+	import SubHeader from '$lib/components/SubHeader.svelte';
 
 	import type { PageData } from './$types';
 
@@ -8,6 +8,7 @@
 </script>
 
 <Header />
+<SubHeader />
 
 <div class="container p-12 mx-auto flex justify-center items-center">
 	<div class="space-y-6 text-center flex flex-col items-center">

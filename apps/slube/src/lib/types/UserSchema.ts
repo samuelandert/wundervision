@@ -12,12 +12,15 @@ const validationMessages = {
     about: {
         maxLength: 'About me section must contain at most 500 characters.',
     },
-    age: {
-        min: 'Age must be at least 18.',
-        max: 'Age must be at most 120.',
+    guests: {
+        min: "You can't book a room for no guests can't you? ",
+        max: "It's quite tiny, no room for more then 2 guests (but you are free to try to fit as many children you can squeeze in there)",
     },
     favoriteFood: {
         invalid: 'Invalid food selection.',
+    },
+    location: {
+        invalid: 'Invalid location selection.',
     },
     slider: {
         min: 'Slider value must be at least 0.',
@@ -32,10 +35,12 @@ export const UserSchema = z.object({
     name: z.string().nonempty('Name is required.').min(3, validationMessages.name.minLength).max(10, validationMessages.name.maxLength),
     email: z.string().email(validationMessages.email.isEmail),
     about: z.string().max(500, validationMessages.about.maxLength),
-    age: z.number().min(18, validationMessages.age.min).max(120, validationMessages.age.max),
+    guests: z.number().min(1, validationMessages.guests.min).max(2, validationMessages.guests.max),
     favoriteFood: z.enum(['apple', 'banana', 'coconut', 'peach', 'mango']).refine(value => value !== '', validationMessages.favoriteFood.invalid),
+    location: z.enum(['Neustrelitz', 'Krakow am See', 'Rostock', 'Greifswald']).refine(value => value !== '', validationMessages.location.invalid),
     slider: z.number().min(0, validationMessages.slider.min).max(100, validationMessages.slider.max),
     toggle: z.boolean().refine(value => typeof value === 'boolean', validationMessages.toggle.isBoolean),
 }).required({
     name: true,
+    location: true
 });

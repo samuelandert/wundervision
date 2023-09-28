@@ -18,11 +18,11 @@
 	<Composer composer={$drawerStore.meta} />
 </Drawer>
 
-<AppShell background="bg-white">
+<AppShell>
 	<svelte:fragment slot="header">
 		<AppBar
-			background="bg-white"
 			gridColumns="grid-cols-3"
+			background="bg-white"
 			slotDefault="place-self-center"
 			slotTrail="place-content-end"
 		>

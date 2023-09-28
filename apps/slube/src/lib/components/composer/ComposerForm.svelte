@@ -9,6 +9,7 @@
 	import TextAreaInput from '../inputfields/TextAreaInput.svelte';
 	import NumberInput from '../inputfields/NumberInput.svelte';
 	import CardSelectInput from '../inputfields/CardSelectInput.svelte';
+	import DateRangeInput from '../inputfields/DateRangeInput.svelte';
 	import { derived, writable } from 'svelte/store';
 	import Stepper from './Stepper.svelte';
 
@@ -117,6 +118,7 @@
 
 	async function handleNext() {
 		const currentFieldName = fields[$state.context.currentField].name;
+
 		const validationResult = await validate(currentFieldName);
 
 		if (validationResult && !validationResult.valid) {
@@ -192,6 +194,8 @@
 					<NumberInput {childInput} />
 				{:else if fields[$state.context.currentField].type === 'cardSelect'}
 					<CardSelectInput {childInput} />
+				{:else if fields[$state.context.currentField].type === 'dateRange'}
+					<DateRangeInput {childInput} />
 				{/if}
 			</div>
 		{/if}
@@ -221,7 +225,7 @@
 						<button
 							type="button"
 							on:click={() => send(action)}
-							class="btn btn-base variant-filled-secondary"
+							class="btn btn-base variant-filled-secondary font-semibold font-['Poppins']"
 							disabled={$state.context.currentField === 0}
 						>
 							{action}
@@ -232,7 +236,11 @@
 			<div>
 				{#each $possibleActions as action (action)}
 					{#if action !== 'NEXT' && action !== 'PREV' && action !== 'SUBMIT'}
-						<button type="button" on:click={() => send(action)} class="btn btn-base variant-filled">
+						<button
+							type="button"
+							on:click={() => send(action)}
+							class="btn btn-base variant-filled font-semibold font-['Poppins']"
+						>
 							{action}
 						</button>
 					{/if}
@@ -244,7 +252,7 @@
 						<button
 							type="button"
 							on:click={() => handleNext()}
-							class="btn variant-filled-primary btn-sm sm:btn-base"
+							class="btn variant-filled-primary btn-sm sm:btn-base font-semibold font-['Poppins']"
 							disabled={$errors[fields[$state.context.currentField].name]}
 						>
 							{action}

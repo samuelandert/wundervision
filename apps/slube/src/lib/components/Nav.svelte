@@ -39,14 +39,15 @@
 		{/if}
 	{/each}
 	<button on:click={() => (showMobileMenu = !showMobileMenu)} class="px-4">
-		<!-- Hamburger icon -->
-		<span class="block w-5 h-0.5 bg-black mb-1" />
-		<span class="block w-5 h-0.5 bg-black mb-1" />
-		<span class="block w-5 h-0.5 bg-black" />
+		<span class="block w-5 h-0.5 bg-secondary-500 mb-1" />
+		<span class="block w-5 h-0.5 bg-secondary-500 mb-1" />
+		<span class="block w-5 h-0.5 bg-secondary-500" />
 	</button>
 
 	{#if showMobileMenu}
-		<div class="absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center pt-10">
+		<div
+			class="absolute top-0 left-0 w-full h-screen z-10 flex flex-col items-center pt-10 bg-surface-800"
+		>
 			{#each navItems as item (item.title)}
 				{#if !item.active}
 					<div
@@ -57,13 +58,13 @@
 					>
 						<span
 							class={`text-center text-2xl font-['Poppins'] leading-normal w-full whitespace-nowrap ${
-								item.active || item === hoveredItem ? 'text-secondary-500' : 'text-gray-400'
+								item.active || item === hoveredItem ? 'text-white-500' : 'text-gray-400'
 							}`}
 						>
 							{item.title}
 						</span>
 						{#if item.active || item === hoveredItem}
-							<div class="w-2 h-2 bg-sky-500 rounded-full opacity-100 mt-1" />
+							<div class="w-2 h-2 bg-primary-500 rounded-full opacity-100 mt-1" />
 						{/if}
 					</div>
 				{/if}
