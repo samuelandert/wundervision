@@ -1,11 +1,11 @@
 {
   "name": "generated-wundergraph",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "main": "client.ts",
   "types": "client.ts",
   "license": "MIT",
   "dependencies": {
-    "api": "^0.2.1"
+    "api": "^0.2.2"
   }
 }

@@ -1,5 +1,13 @@
 # wallet
 
+## 0.2.2
+
+### Patch Changes
+
+- d524d23: deploy test
+- Updated dependencies [d524d23]
+  - generated-wundergraph@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

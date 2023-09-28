@@ -1,5 +1,11 @@
 # www
 
+## 0.2.2
+
+### Patch Changes
+
+- d524d23: deploy test
+
 ## 0.2.1
 
 ### Patch Changes

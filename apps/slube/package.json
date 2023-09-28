@@ -1,6 +1,6 @@
 {
   "name": "slube",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -18,8 +18,7 @@
     "@iconify/svelte": "^3.1.4",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@xstate/svelte": "^2.1.0",
-    "design-system": "^0.2.1",
-    "generated-wundergraph": "^0.2.1",
+    "generated-wundergraph": "^0.2.2",
     "sveltekit-superforms": "^1.7.2",
     "xstate": "^4.38.2"
   },
