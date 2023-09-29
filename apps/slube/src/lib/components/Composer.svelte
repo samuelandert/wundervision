@@ -82,8 +82,9 @@
 			component.children.forEach(loadComponentAndInitializeState);
 		}
 
+		const components = import.meta.glob('/src/lib/components/*.svelte');
 		const ComponentModule = component.component
-			? (await import(`./${component.component}.svelte`)).default
+			? (await components[`/src/lib/components/${component.component}.svelte`]()).default
 			: null;
 		if (!ComponentModule) {
 			throw new Error(`Component ${component.component} not found`);

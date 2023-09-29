@@ -1,8 +1,7 @@
 import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import autoImport from 'composer-import';// Configure Vite
-import dynamicImport from 'vite-plugin-dynamic-import';
+import autoImport from 'composer-import';
 
 export default defineConfig({
 	plugins: [
@@ -19,7 +18,6 @@ export default defineConfig({
 				svelte: ['onMount']
 			},
 		}),
-		dynamicImport(),
 		sveltekit(),
 		purgeCss(),
 	],
