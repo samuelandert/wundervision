@@ -2,7 +2,6 @@ import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import autoImport from 'composer-import';
-import dynamicImport from 'vite-plugin-dynamic-import-polyfill';
 
 export default defineConfig({
 	plugins: [
@@ -21,7 +20,6 @@ export default defineConfig({
 		}),
 		sveltekit(),
 		purgeCss(),
-		dynamicImport(),
 	],
 	build: {
 		rollupOptions: {
