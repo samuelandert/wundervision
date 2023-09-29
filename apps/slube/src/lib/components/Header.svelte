@@ -13,7 +13,7 @@
 		children: [
 			{
 				id: 'ComposerForm',
-				component: 'ComposerForm',
+				component: 'Header',
 				slot: 'main',
 				machine: {
 					id: 'validation',

@@ -48,7 +48,7 @@
 	}
 
 	async function loadComponentAndInitializeState(component: IComposer) {
-		if (!component) return;
+		if (!component || !component.component) return;
 
 		if (component.id) {
 			component.store = createComposerStore(component.id, component.store || {});

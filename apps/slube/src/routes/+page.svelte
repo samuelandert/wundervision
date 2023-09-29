@@ -3,7 +3,7 @@
 	export let data: PageData;
 
 	let Component;
-	let componentName = 'Header';
+	let componentName = 'ComposerForm';
 
 	onMount(async () => {
 		const components = import.meta.glob('/src/lib/components/*.svelte');
@@ -17,9 +17,9 @@
 	});
 </script>
 
-<!-- <Header /> -->
+<Header />
 <svelte:component this={Component} />
-<!-- <SubHeader /> -->
+<SubHeader />
 
 <div class="container p-12 mx-auto flex justify-center items-center">
 	<div class="space-y-6 text-center flex flex-col items-center">
