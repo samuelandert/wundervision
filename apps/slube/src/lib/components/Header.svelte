@@ -12,7 +12,7 @@
 </script>
 
 <div class="relative w-full h-screen grid place-items-center">
-	<img class="absolute w-full h-full object-cover" src="banner.png" alt="Slube" />
+	<img class="absolute w-full h-full object-cover" src="/banner.png" alt="Slube" />
 	<div class="absolute w-full h-full bg-black bg-opacity-50" />
 	<div class="relative z-3 text-center text-white p-4 w-full sm:w-2/3 lg:w-1/2">
 		<div>

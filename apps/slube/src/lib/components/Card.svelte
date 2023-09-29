@@ -12,7 +12,7 @@
 >
 	<div class="row-start-1 row-end-2 relative">
 		<div style="padding-bottom: 50%;" />
-		<img class="absolute top-0 left-0 w-full h-full rounded-2xl object-cover" src={image} />
+		<img class="absolute top-0 left-0 w-full h-full rounded-2xl object-cover" src="/{image}" />
 	</div>
 	<div
 		class="pt-2 row-start-2 row-end-3 text-xl font-semibold font-['Poppins'] leading-normal text-left"
