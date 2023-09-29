@@ -82,7 +82,7 @@
 			component.children.forEach(loadComponentAndInitializeState);
 		}
 
-		const components = import.meta.glob('/src/lib/components/*.svelte');
+		const components = import.meta.glob('/src/lib/components/*.svelte', { eager: true });
 		const ComponentModule = component.component
 			? (await components[`/src/lib/components/${component.component}.svelte`]()).default
 			: null;
