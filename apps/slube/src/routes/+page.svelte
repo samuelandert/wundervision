@@ -1,26 +1,26 @@
 <script lang="ts">
 	// import type { PageData } from './$types';
 	export let data: PageData;
-	import { composer } from '$lib/composables/flow';
 
-	let Component;
-	let componentName = 'Composer';
+	// let Component;
+	// let componentName = 'Header';
 
-	onMount(async () => {
-		const components = import.meta.glob('/src/lib/components/*.svelte');
+	// onMount(async () => {
+	// 	const comp = await import(`../lib/components/${componentName}.svelte`);
+	// 	Component = comp.default;
+	// });
+	let componentName = 'Header';
 
-		for (const path in components) {
-			if (path.endsWith(`${componentName}.svelte`)) {
-				Component = (await components[path]()).default;
-				break;
-			}
-		}
-	});
+	async function loadComponent(element) {
+		const module = await import(`../lib/components/${componentName}.svelte`);
+		new module.default({ target: element });
+	}
 </script>
 
+<div use:loadComponent />
+
 <!-- <Header /> -->
-<svelte:component this={Component} {composer} />
-<!-- <SubHeader /> -->
+<!-- <svelte:component this={Component} /> -->
 
 <div class="container p-12 mx-auto flex justify-center items-center">
 	<div class="space-y-6 text-center flex flex-col items-center">
