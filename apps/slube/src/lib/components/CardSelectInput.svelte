@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Card from './Card.svelte';
 
 	let inputElement;
 

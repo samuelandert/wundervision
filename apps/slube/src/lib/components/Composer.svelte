@@ -3,6 +3,7 @@
 	import { createComposerStore, getComposerStore } from '$lib/composables/composerStores';
 	import { coreServices } from '$lib/composables/services';
 	import { Machine, interpret } from 'xstate';
+	import Composer from './Composer.svelte';
 
 	interface IComposerLayout {
 		areas: string;
@@ -82,7 +83,7 @@
 			component.children.forEach(loadComponentAndInitializeState);
 		}
 
-		const components = import.meta.glob('/src/lib/components/*.svelte', { eager: true });
+		const components = import.meta.glob('/src/lib/components/*.svelte');
 		const ComponentModule = component.component
 			? (await components[`/src/lib/components/${component.component}.svelte`]()).default
 			: null;

@@ -3,6 +3,15 @@
 	import { useMachine } from '@xstate/svelte';
 	import { superForm } from 'sveltekit-superforms/client';
 	import { derived, writable } from 'svelte/store';
+	import Stepper from './Stepper.svelte';
+	import CardSelectInput from './CardSelectInput.svelte';
+	import DateRangeInput from './DateRangeInput.svelte';
+	import SelectInput from './SelectInput.svelte';
+	import SliderInput from './SliderInput.svelte';
+	import TextAreaInput from './TextAreaInput.svelte';
+	import TextInput from './TextInput.svelte';
+	import ToggleInput from './ToggleInput.svelte';
+	import NumberInput from './NumberInput.svelte';
 
 	export let me;
 
