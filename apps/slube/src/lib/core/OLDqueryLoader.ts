@@ -1,16 +1,17 @@
-// dataLoader.ts
-import dataSources from 'virtual:data-sources-list';
+// apps/slube/src/lib/core/queryLoader.ts
 import { writable } from 'svelte/store';
-import { coreServices } from './coreServices';
+import { coreServices } from './services';
 
 // The store that holds the data sets
 export const queryStore = writable({});
 
-// Dynamically import the data modules and assign them to the store
-dataSources.forEach(src => {
-    import(`/src/lib/data/${src}.ts`).then(module => {
-        const moduleData = module[src] || module.default;
-        queryStore.update(store => ({ ...store, [src]: moduleData }));
+// Assign the data modules to the store
+const dataSources = [];
+
+dataSources.forEach(dataSource => {
+    Object.entries(dataSource).forEach(([name, getModule]) => {
+        const moduleData = getModule();
+        queryStore.update(store => ({ ...store, [name]: moduleData }));
     });
 });
 

@@ -1,7 +1,4 @@
 <script lang="ts">
-	import Header from '$lib/components/Header.svelte';
-	import SubHeader from '$lib/components/SubHeader.svelte';
-
 	import type { PageData } from './$types';
 
 	export let data: PageData;

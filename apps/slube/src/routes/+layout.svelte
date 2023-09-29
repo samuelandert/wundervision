@@ -1,26 +1,18 @@
 <script lang="ts">
 	import '../app.postcss';
-	import {
-		AppShell,
-		AppBar,
-		Drawer,
-		initializeStores,
-		getDrawerStore
-	} from '@skeletonlabs/skeleton';
-	import Nav from '$lib/components/Nav.svelte';
-	import Composer from '$lib/core/Composer.svelte';
+	import { initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
 
 	initializeStores();
 	const drawerStore = getDrawerStore();
 </script>
 
-<Drawer bgDrawer="bg-white" height="h-auto">
-	<!-- <Composer composer={$drawerStore.meta} /> -->
-</Drawer>
+<SkeletonDrawer bgDrawer="bg-white" height="h-auto">
+	<Composer composer={$drawerStore.meta} />
+</SkeletonDrawer>
 
-<AppShell>
+<SkeletonAppShell>
 	<svelte:fragment slot="header">
-		<AppBar
+		<SkeletonAppBar
 			gridColumns="grid-cols-3"
 			background="bg-white"
 			slotDefault="place-self-center"
@@ -33,7 +25,7 @@
 			<svelte:fragment slot="trail">
 				<button class="btn btn-sm sm:btn-base variant-filled-primary">Book Now</button>
 			</svelte:fragment>
-		</AppBar>
+		</SkeletonAppBar>
 	</svelte:fragment>
 	<slot />
-</AppShell>
+</SkeletonAppShell>

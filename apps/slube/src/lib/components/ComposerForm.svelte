@@ -2,16 +2,7 @@
 	import { createMachine, assign } from 'xstate';
 	import { useMachine } from '@xstate/svelte';
 	import { superForm } from 'sveltekit-superforms/client';
-	import TextInput from '../inputfields/TextInput.svelte';
-	import ToggleInput from '../inputfields/ToggleInput.svelte';
-	import SliderInput from '../inputfields/SliderInput.svelte';
-	import SelectInput from '../inputfields/SelectInput.svelte';
-	import TextAreaInput from '../inputfields/TextAreaInput.svelte';
-	import NumberInput from '../inputfields/NumberInput.svelte';
-	import CardSelectInput from '../inputfields/CardSelectInput.svelte';
-	import DateRangeInput from '../inputfields/DateRangeInput.svelte';
 	import { derived, writable } from 'svelte/store';
-	import Stepper from './Stepper.svelte';
 
 	export let me;
 

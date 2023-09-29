@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { onDestroy } from 'svelte';
-	import Composer from './Composer.svelte';
-	import components from './componentLoader';
-	import { createComposerStore, getComposerStore } from './composerStores';
-	import { coreServices } from './coreServices';
+	import { createComposerStore, getComposerStore } from '$lib/core/composerStores';
+	import { coreServices } from '$lib/core/services';
 	import { Machine, interpret } from 'xstate';
-	import { subscribeAndMapQueries } from './queryLoader';
+	// import { subscribeAndMapQueries } from '$lib/core/queryLoader';
 
 	interface IComposerLayout {
 		areas: string;
@@ -55,9 +53,9 @@
 
 		if (component.id) {
 			component.store = createComposerStore(component.id, component.store || {});
-			if (component.data?.map) {
-				subscribeAndMapQueries(component.id, component.data.map);
-			}
+			// if (component.data?.map) {
+			// 	subscribeAndMapQueries(component.id, component.data.map);
+			// }
 			if (component.data?.gql) {
 				getComposerStore(component.id).update((storeValue) => {
 					return {
@@ -84,8 +82,9 @@
 		if (component.children) {
 			component.children.forEach(loadComponentAndInitializeState);
 		}
-		const componentName = component.component || 'FallBack';
-		return await getComponent(componentName);
+		const componentName = component.component;
+		const ComponentModule = await import(`/src/lib/components/${componentName}.svelte`);
+		return ComponentModule.default;
 	}
 
 	function initializeAndStartMachine(composer: IComposer) {
@@ -127,13 +126,6 @@
 	onDestroy(() => {
 		unsubscribers.forEach((unsub) => unsub());
 	});
-
-	async function getComponent(componentName: string) {
-		if (components[componentName]) {
-			const module = await components[componentName]();
-			return module.default;
-		}
-	}
 </script>
 
 <div
