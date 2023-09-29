@@ -9,7 +9,7 @@
 	// 	const comp = await import(`../lib/components/${componentName}.svelte`);
 	// 	Component = comp.default;
 	// });
-	let componentName = 'Header';
+	let componentName = 'HelloEarth';
 
 	async function loadComponent(element) {
 		const module = await import(`../lib/components/${componentName}.svelte`);
