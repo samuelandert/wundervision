@@ -1,26 +1,17 @@
 <script lang="ts">
 	// import type { PageData } from './$types';
 	export let data: PageData;
+	import { composer } from '$lib/composables/flow';
 
-	// let Component;
-	// let componentName = 'Header';
-
-	// onMount(async () => {
-	// 	const comp = await import(`../lib/components/${componentName}.svelte`);
-	// 	Component = comp.default;
-	// });
-	let componentName = 'HelloEarth';
+	let componentName = 'Composer';
 
 	async function loadComponent(element) {
 		const module = await import(`../lib/components/${componentName}.svelte`);
-		new module.default({ target: element });
+		new module.default({ target: element, props: { composer } });
 	}
 </script>
 
 <div use:loadComponent />
-
-<!-- <Header /> -->
-<!-- <svelte:component this={Component} /> -->
 
 <div class="container p-12 mx-auto flex justify-center items-center">
 	<div class="space-y-6 text-center flex flex-col items-center">

@@ -18,12 +18,12 @@ export let composer = {
                 initial: 'notValidated',
                 context: {
                     fields: [
-                        // {
-                        //     name: 'staytime',
-                        //     type: 'dateRange',
-                        //     title: 'When do you want to visit?',
-                        //     description: 'Please choose your date range'
-                        // },
+                        {
+                            name: 'staytime',
+                            type: 'dateRange',
+                            title: 'When do you want to visit?',
+                            description: 'Please choose your date range'
+                        },
                         {
                             name: 'location',
                             type: 'cardSelect',
