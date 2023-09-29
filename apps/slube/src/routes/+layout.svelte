@@ -7,8 +7,6 @@
 		initializeStores,
 		getDrawerStore
 	} from '@skeletonlabs/skeleton';
-	import Nav from '$lib/components/Nav.svelte';
-	import Composer from '$lib/components/Composer.svelte';
 
 	initializeStores();
 	const drawerStore = getDrawerStore();
