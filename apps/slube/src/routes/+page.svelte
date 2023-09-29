@@ -1,10 +1,25 @@
 <script lang="ts">
 	// import type { PageData } from './$types';
 	export let data: PageData;
+
+	let Component;
+	let componentName = 'Header';
+
+	onMount(async () => {
+		const components = import.meta.glob('/src/lib/components/*.svelte');
+
+		for (const path in components) {
+			if (path.endsWith(`${componentName}.svelte`)) {
+				Component = (await components[path]()).default;
+				break;
+			}
+		}
+	});
 </script>
 
-<Header />
-<SubHeader />
+<!-- <Header /> -->
+<svelte:component this={Component} />
+<!-- <SubHeader /> -->
 
 <div class="container p-12 mx-auto flex justify-center items-center">
 	<div class="space-y-6 text-center flex flex-col items-center">
