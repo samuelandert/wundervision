@@ -3,11 +3,6 @@
 	import { createComposerStore, getComposerStore } from '$lib/composables/composerStores';
 	import { coreServices } from '$lib/composables/services';
 	import { Machine, interpret } from 'xstate';
-	import ComposerForm from './ComposerForm.svelte';
-
-	let components = {
-		ComposerForm
-	};
 
 	interface IComposerLayout {
 		areas: string;
@@ -86,10 +81,12 @@
 		if (component.children) {
 			component.children.forEach(loadComponentAndInitializeState);
 		}
-		const componentName = component.component;
-		const ComponentModule = components[componentName];
+
+		const ComponentModule = component.component
+			? (await import(`./${component.component}.svelte`)).default
+			: null;
 		if (!ComponentModule) {
-			throw new Error(`Component ${componentName} not found`);
+			throw new Error(`Component ${component.component} not found`);
 		}
 		return ComponentModule;
 	}

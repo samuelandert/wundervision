@@ -18,6 +18,7 @@
     "@iconify/svelte": "^3.1.4",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@xstate/svelte": "^2.1.0",
+    "composer-import": "^1.7.1",
     "generated-wundergraph": "^0.2.2",
     "sveltekit-superforms": "^1.7.2",
     "xstate": "^4.38.2"
@@ -44,13 +45,13 @@
     "svelte": "^4.0.5",
     "svelte-check": "^3.4.3",
     "svelte-time": "^0.8.0",
-    "sveltekit-autoimport": "^1.7.1",
     "tailwindcss": "3.3.3",
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-svelte-components": "^0.2.10",
     "vite": "^4.4.2",
+    "vite-plugin-dynamic-import-polyfill": "^0.1.0",
     "vite-plugin-tailwind-purgecss": "0.1.3",
     "vitest": "^0.32.2"
   },
