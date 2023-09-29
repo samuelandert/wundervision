@@ -1,6 +1,5 @@
 <script>
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
-	import { UserSchema } from '$lib/types/UserSchema';
 	const drawerStore = getDrawerStore();
 
 	let composer = {

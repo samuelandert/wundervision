@@ -1,25 +1,28 @@
 import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import Components from 'unplugin-svelte-components/vite'
+import autoImport from 'sveltekit-autoimport';
 
 export default defineConfig({
 	plugins: [
-		Components({
-			dts: true,
-			dirs: ['src/lib/components/'],
-			external: [
-				{
-					from: '@skeletonlabs/skeleton',
-					names: ['AppShell as SkeletonAppShell', 'AppBar as SkeletonAppBar', 'Drawer as SkeletonDrawer'],
-					defaultImport: true,
-
-				},
+		autoImport({
+			include: ['**/*.(svelte)'],
+			components: [
+				'./src/lib/components',
 			],
+			mapping: {
+				testMe: `import testMe from '$lib/composables/testMe.ts'`,
+				UserSchema: `import { UserSchema } from '$lib/composables/UserSchema'`,
+				// TestComposerForm: `import ComposerForm from '$lib/components/ComposerForm.svelte'`
+			},
+			module: {
+				svelte: ['onMount']
+			},
 		}),
 		sveltekit(),
 		purgeCss(),
 	],
+
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}

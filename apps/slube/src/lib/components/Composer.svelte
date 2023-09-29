@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { onDestroy } from 'svelte';
-	import { createComposerStore, getComposerStore } from '$lib/core/composerStores';
-	import { coreServices } from '$lib/core/services';
+	import { createComposerStore, getComposerStore } from '$lib/composables/composerStores';
+	import { coreServices } from '$lib/composables/services';
 	import { Machine, interpret } from 'xstate';
-	// import { subscribeAndMapQueries } from '$lib/core/queryLoader';
+	import ComposerForm from './ComposerForm.svelte';
+
+	let components = {
+		ComposerForm
+	};
 
 	interface IComposerLayout {
 		areas: string;
@@ -83,8 +87,11 @@
 			component.children.forEach(loadComponentAndInitializeState);
 		}
 		const componentName = component.component;
-		const ComponentModule = await import(`/src/lib/components/${componentName}.svelte`);
-		return ComponentModule.default;
+		const ComponentModule = components[componentName];
+		if (!ComponentModule) {
+			throw new Error(`Component ${componentName} not found`);
+		}
+		return ComponentModule;
 	}
 
 	function initializeAndStartMachine(composer: IComposer) {

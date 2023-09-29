@@ -1,10 +1,15 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-
+	// import type { PageData } from './$types';
 	export let data: PageData;
+	// import testMe from '$lib/composables/testMe';
+
+	onMount(() => {
+		console.log('hello: ' + testMe.message);
+	});
 </script>
 
 <Header />
+<!-- <svelte:component this={HelloEarth} /> -->
 <SubHeader />
 
 <div class="container p-12 mx-auto flex justify-center items-center">
