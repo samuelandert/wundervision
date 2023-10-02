@@ -1,21 +1,4 @@
 <script lang="ts">
-	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
-	import '@splidejs/svelte-splide/css';
-	let options = {
-		type: 'loop',
-		perPage: 3,
-		gap: '1rem', // Add gap between slides
-		breakpoints: {
-			640: {
-				// For mobile
-				perPage: 1
-			},
-			1024: {
-				// For tablet
-				perPage: 2
-			}
-		}
-	};
 	let cards = [
 		{
 			title: 'Neustrelitz',
