@@ -156,7 +156,7 @@
 	);
 </script>
 
-<div class="p-2 md:p-8 lg:p-12">
+<div class="p-3 pb-4 md:p-8 lg:p-12">
 	<form on:submit|preventDefault={handleNext} on:keydown={handleKeyDown} class="w-full">
 		{#if $state.matches('input')}
 			<div class="mb-4">
