@@ -2,8 +2,6 @@
 
 [![CI](https://github.com/wundergraph/cloud-starter-turbo/actions/workflows/ci.yaml/badge.svg)](https://github.com/wundergraph/cloud-starter-turbo/actions/workflows/ci.yaml)
 
-This starter combines [WunderGraph](https://wundergraph.com/) Cloud with [Turborepo](https://github.com/vercel/turbo) to create an optimized monorepo experience for your WunderGraph application.
-
 ### Getting started locally
 (imported using yarn for now, pnpm and npm, have some issues)
 
