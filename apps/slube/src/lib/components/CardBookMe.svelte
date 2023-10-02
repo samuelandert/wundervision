@@ -1,10 +1,14 @@
-<script lang="ts">
+<script>
 	export let card;
 </script>
 
 <div class="w-full bg-white rounded-2xl shadow flex-col justify-start items-start inline-flex">
 	<div class="w-full h-56 relative">
-		<img class="w-full h-56 left-0 top-0 absolute rounded-tl-2xl rounded-tr-2xl" src={card.image} />
+		<img
+			class="w-full h-56 left-0 top-0 absolute rounded-tl-2xl rounded-tr-2xl"
+			src={card.image}
+			alt={card.title}
+		/>
 		<div
 			class="w-44 h-10 p-2 left-0 top-[170px] absolute bg-white rounded-r-lg shadow flex-col justify-center items-center gap-2 inline-flex"
 		>

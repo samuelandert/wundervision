@@ -22,28 +22,28 @@
 			description: 'Entire apartment, 2 Bedrooms, 2 Large King Bed, 4 Guests',
 			location: 'Am Stadthafen 4, 17235 Neustrelitz',
 			price: '59€',
-			image: '/neustrelitz.png'
+			image: 'neustrelitz.png'
 		},
 		{
 			title: 'Rostock',
 			description: 'Entire apartment, 2 Bedrooms, 2 Large King Bed, 4 Guests',
 			location: 'Dorfstraße 26 A, 14793 Gräben',
 			price: '59€',
-			image: '/rostock.png'
+			image: 'rostock.png'
 		},
 		{
 			title: 'Greifswald',
 			description: 'Entire apartment, 2 Bedrooms, 2 Large King Bed, 4 Guests',
 			location: 'Salinenstraße 22 17489',
 			price: '59€',
-			image: '/greifswald.png'
+			image: 'greifswald.png'
 		},
 		{
 			title: 'Krakow',
 			description: 'Entire apartment, 2 Bedrooms, 2 Large King Bed, 4 Guests',
 			location: 'Windfang 1 18292 Krakow am See',
 			price: '59€',
-			image: '/krakow.png'
+			image: 'krakow.png'
 		}
 	];
 </script>
