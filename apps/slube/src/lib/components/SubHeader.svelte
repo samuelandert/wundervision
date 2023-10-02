@@ -43,7 +43,7 @@
 			description: 'Entire apartment, 2 Bedrooms, 2 Large King Bed, 4 Guests',
 			location: 'Windfang 1 18292 Krakow am See',
 			price: '59€',
-			image: 'Krakow.png'
+			image: 'KrakowAmSee.png'
 		}
 	];
 </script>

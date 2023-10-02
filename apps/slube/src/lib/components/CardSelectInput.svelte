@@ -33,6 +33,7 @@
 				description={option.description}
 				image={option.image}
 				selected={selectedOption === option.value}
+				squareImage={option.squareImage}
 			/>
 		</div>
 	{/each}

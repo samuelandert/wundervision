@@ -35,7 +35,7 @@ export const view = {
                                 {
                                     value: 'Krakow am See',
                                     label: 'Krakow am See',
-                                    image: 'Krakow.png',
+                                    image: 'KrakowAmSee.png',
                                     description:
                                         'Übernachten an einem der schönsten Seen in Mecklenburg-Vorpommern. Direk am Krakower See gelegen, kannst du den Sonnenverlauf von der Dachterasse Deines slubes aus genießen. Ein idealer Ort zum Radfahren, Wandern und Wassersport'
                                 },
@@ -60,6 +60,31 @@ export const view = {
                             type: 'dateRange',
                             title: 'When do you want to visit?',
                             description: 'Please choose your date range'
+                        },
+                        {
+                            name: 'type',
+                            type: 'cardSelect',
+                            title: 'Do you want to sleep in the Home or Tower Slube?',
+                            description: 'Please choose your slube',
+                            options: [
+                                {
+                                    value: 'slubehome',
+                                    label: 'Slube Home',
+                                    image: 'SlubeHome.png',
+                                    description:
+                                        '69€ / night',
+                                    squareImage: true
+                                },
+                                {
+                                    value: 'slubetower',
+                                    label: 'Slube Tower',
+                                    image: 'SlubeTower.png',
+                                    description:
+                                        '89€ / night',
+                                    squareImage: true
+
+                                },
+                            ]
                         },
                         {
                             name: 'guests',
