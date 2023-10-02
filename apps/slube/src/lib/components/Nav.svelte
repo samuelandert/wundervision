@@ -2,7 +2,6 @@
 	let navItems = [
 		{ title: 'Home', active: true },
 		{ title: 'Concept', active: false },
-		{ title: 'Locations', active: false },
 		{ title: 'Become a partner', active: false },
 		{ title: 'Coupon', active: false }
 	];
@@ -29,7 +28,7 @@
 				on:mouseleave={() => (hoveredItem = null)}
 			>
 				<span
-					class={`text-center text-md font-['Poppins'] leading-normal w-full whitespace-nowrap ${
+					class={`text-center text-md leading-normal w-full whitespace-nowrap ${
 						item.active || item === hoveredItem ? 'text-secondary-500' : 'text-gray-400'
 					}`}
 				>
@@ -83,7 +82,7 @@
 		>
 			<div class="px-6 flex-col justify-start items-center gap-1 inline-flex w-full">
 				<div
-					class={`text-center text-md font-['Poppins'] leading-normal w-full whitespace-nowrap ${
+					class={`text-center text-md font-semibold leading-normal w-full whitespace-nowrap ${
 						item.active || item === hoveredItem ? 'text-secondary-500' : 'text-gray-400'
 					}`}
 				>

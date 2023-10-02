@@ -10,6 +10,15 @@
 
 	initializeStores();
 	const drawerStore = getDrawerStore();
+
+	import { view } from '$lib/views/Form';
+
+	function openDrawer() {
+		drawerStore.open({
+			position: 'bottom',
+			meta: view
+		});
+	}
 </script>
 
 <Drawer bgDrawer="bg-white" height="h-auto">
@@ -29,7 +38,9 @@
 			</svelte:fragment>
 			<Nav />
 			<svelte:fragment slot="trail">
-				<button class="btn btn-sm sm:btn-base variant-filled-primary">Book Now</button>
+				<button on:click={openDrawer} class="btn btn-sm sm:btn-base variant-filled-primary"
+					>Book Now</button
+				>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>

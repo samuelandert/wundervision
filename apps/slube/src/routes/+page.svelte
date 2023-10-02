@@ -1,12 +1,15 @@
 <script lang="ts">
+	import SlubeElement from '$lib/components/SlubeElement.svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
 </script>
 
 <Header />
 <SubHeader />
-<!-- <BannerBetween /> -->
-
+<BannerBetween />
+<SlubeElement />
+<WhyChooseUs />
+<!-- 
 <div class="container p-12 mx-auto flex justify-center items-center">
 	<div class="space-y-6 text-center flex flex-col items-center">
 		{#each data.countries_countries ?? [] as country}
@@ -16,4 +19,4 @@
 			</p>
 		{/each}
 	</div>
-</div>
+</div> -->

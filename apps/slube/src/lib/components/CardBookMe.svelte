@@ -1,11 +1,21 @@
 <script>
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	const drawerStore = getDrawerStore();
+	import { view } from '$lib/views/Form';
+
 	export let card;
+	function openDrawer() {
+		drawerStore.open({
+			position: 'bottom',
+			meta: view
+		});
+	}
 </script>
 
 <div class="w-full bg-white rounded-2xl shadow flex-col justify-start items-start inline-flex">
 	<div class="w-full h-56 relative">
 		<img
-			class="w-full h-56 left-0 top-0 absolute rounded-tl-2xl rounded-tr-2xl"
+			class="w-full h-56 left-0 top-0 absolute rounded-tl-2xl rounded-tr-2xl object-cover"
 			src={card.image}
 			alt={card.title}
 		/>
@@ -35,7 +45,9 @@
 			</div>
 		</div>
 		<div class="flex justify-center items-center mt-2">
-			<button type="button" class="btn variant-filled-primary">Book Now</button>
+			<button on:click={openDrawer} type="button" class="btn variant-filled-primary"
+				>Book Now</button
+			>
 		</div>
 	</div>
 </div>
