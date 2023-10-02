@@ -156,20 +156,20 @@
 	);
 </script>
 
-<div class="p-12">
+<div class="p-2 md:p-8 lg:p-12">
 	<form on:submit|preventDefault={handleNext} on:keydown={handleKeyDown} class="w-full">
 		{#if $state.matches('input')}
 			<div class="mb-4">
-				<div class="mb-6">
-					<h2 class="mb-2 text-5xl font-semibold text-center text-primary-500">
+				<div class="p-2">
+					<h2 class="mb-2 text-lg md:text-4xl font-semibold text-center text-primary-500">
 						{fields[$state.context.currentField].title}
 					</h2>
 					{#if $errors[fields[$state.context.currentField].name]}
-						<p class="text-2xl text-center text-warning-500">
+						<p class="text-sm lg:text-2xl text-center text-warning-500">
 							{$errors[fields[$state.context.currentField].name]}
 						</p>
 					{:else}
-						<p class="text-2xl text-center text-secondary-500">
+						<p class="text-sm lg:text-2xl text-center text-secondary-500">
 							{fields[$state.context.currentField].description}
 						</p>
 					{/if}
@@ -225,7 +225,7 @@
 						<button
 							type="button"
 							on:click={() => send(action)}
-							class="btn btn-base variant-filled-secondary font-semibold font-['Poppins']"
+							class="btn btn-sm md:btn-base variant-filled-secondary font-semibold"
 							disabled={$state.context.currentField === 0}
 						>
 							{action}
@@ -239,7 +239,7 @@
 						<button
 							type="button"
 							on:click={() => send(action)}
-							class="btn btn-base variant-filled font-semibold font-['Poppins']"
+							class="btn btn-sm md:btn-base variant-filled font-semibold"
 						>
 							{action}
 						</button>
@@ -252,7 +252,7 @@
 						<button
 							type="button"
 							on:click={() => handleNext()}
-							class="btn variant-filled-primary btn-sm sm:btn-base font-semibold font-['Poppins']"
+							class="btn variant-filled-primary btn-sm md:btn-base font-semibold"
 							disabled={$errors[fields[$state.context.currentField].name]}
 						>
 							{action}

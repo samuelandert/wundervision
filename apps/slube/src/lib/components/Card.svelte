@@ -6,8 +6,35 @@
 	export let squareImage = false;
 </script>
 
+<!-- Mobile view -->
 <div
-	class={`w-full grid grid-rows-card bg-gray-100 p-4 text-secondary-500 rounded-2xl transition-colors duration-200 ${
+	class={`w-full flex md:hidden bg-gray-100 text-secondary-500 rounded-2xl transition-colors duration-200 ${
+		selected ? 'bg-primary-500 text-white' : 'hover:bg-primary-500 hover:text-white'
+	}`}
+>
+	<div class="w-1/3 relative">
+		<img
+			class="absolute top-0 left-0 w-full h-full rounded-l-2xl object-cover"
+			src={image}
+			alt={name}
+		/>
+	</div>
+	<div class="w-2/3 pl-4 p-2">
+		<div class="text-md font-semibold leading-normal text-left">
+			{name}
+		</div>
+		<div
+			class="text-xs font-normal leading-tight text-left overflow-hidden"
+			style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"
+		>
+			{description}
+		</div>
+	</div>
+</div>
+
+<!-- Desktop view -->
+<div
+	class={`w-full hidden md:grid md:grid-rows-card bg-gray-100 p-4 text-secondary-500 rounded-2xl transition-colors duration-200 ${
 		selected ? 'bg-primary-500 text-white' : 'hover:bg-primary-500 hover:text-white'
 	}`}
 >
