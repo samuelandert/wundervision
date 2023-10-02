@@ -27,7 +27,6 @@ export default defineConfig({
 			preserveEntrySignatures: 'strict'
 		}
 	},
-
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}
