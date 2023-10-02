@@ -73,11 +73,9 @@
 		vehicula et neque vel, iaculis tincidunt urna. Donec molestie sapien id sagittis posuere.
 	</div>
 
-	<Splide {options} aria-label="Iten Slider" class="px-20 lg:px-20 py-10 w-full xl:w-modal-wide">
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full xl:w-modal-wide">
 		{#each cards as card}
-			<SplideSlide>
-				<CardBookMe {card} />
-			</SplideSlide>
+			<CardBookMe {card} />
 		{/each}
-	</Splide>
+	</div>
 </div>

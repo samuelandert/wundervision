@@ -28,6 +28,7 @@
 	>
 		{description}
 	</div>
+	<div class="text-primary-500 uppercase">---more---</div>
 </div>
 
 <style>
