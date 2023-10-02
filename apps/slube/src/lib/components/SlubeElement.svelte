@@ -1,9 +1,9 @@
-<div class="w-full bg-white">
-	<div class="flex flex-col md:flex-row gap-10 py-12 items-center w-full lg:w-modal-wide">
+<div class="w-full bg-white p-4 sm:p-0">
+	<div class="flex flex-col md:flex-row gap-10 p-4 py-12 items-center w-full lg:w-modal-wide">
 		<div class="flex justify-center items-center">
 			<img class="w-full h-full object-cover" src="SlubeElement.png" alt="SlubeElement" />
 		</div>
-		<div class="flex flex-col gap-10">
+		<div class="flex flex-col gap-10 px-4 sm:px-0">
 			<div class="flex gap-3.5">
 				<p class="chip variant-filled">
 					<Icon
