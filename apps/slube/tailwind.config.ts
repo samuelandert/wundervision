@@ -9,7 +9,14 @@ export default {
 	darkMode: 'class',
 	content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
 	theme: {
-		extend: {},
+		extend: {
+			fontSize: {
+				xxs: ['10px', '16px'],
+			},
+			gridTemplateColumns: {
+				'16': 'repeat(16, minmax(0, 1fr))',
+			}
+		},
 	},
 	plugins: [
 		forms,

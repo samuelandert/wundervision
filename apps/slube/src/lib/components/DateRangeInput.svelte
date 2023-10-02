@@ -68,67 +68,71 @@
 	}
 </script>
 
-<div class="flex flex-wrap max-h-96 overflow-y-auto">
+<div class="flex flex-wrap max-h-72 w-full md:max-h-96 overflow-y-auto">
 	{#if selectedDays.length > 0}
 		<div class="w-full text-center">
 			Selected days: {selectedDays.map((day) => day.fullDate.toLocaleDateString()).join(', ')}
 		</div>
 	{/if}
-	{#each days as day, index (day.fullDate)}
-		{#if index === 0 || days[index - 1].month !== day.month}
-			<div class="p-4 m-1 rounded-xl bg-secondary-300 w-20 h-20 flex items-center justify-center">
-				{day.month}
-			</div>
-		{/if}
-		<div
-			class={`w-20 h-20 flex flex-col items-center justify-center rounded-xl m-1 ${
-				day.isBooked ? 'bg-secondary-100' : ''
-			} ${selectedDays.includes(day) ? 'bg-primary-400' : ''} ${
-				selectedDays.length === 1 && isDayUnavailable(day)
-					? 'bg-secondary-100'
-					: selectedDays.length === 2 &&
-					  hoveredDay &&
-					  selectedDateRange.includes(day) &&
-					  day === hoveredDay
-					? 'bg-error-300'
-					: selectedDays.length === 2 && !selectedDateRange.includes(day)
-					? 'bg-secondary-100'
-					: selectedDays.length === 2 && selectedDateRange.includes(day)
-					? 'bg-primary-400'
-					: selectedDays.length === 1 && selectedDateRange.includes(day)
-					? 'bg-primary-300'
-					: 'hover:bg-primary-500 cursor-pointer'
-			}`}
-			on:click={() => {
-				if (!day.isBooked && !isDayUnavailable(day)) {
-					const index = selectedDays.indexOf(day);
-					if (index !== -1 || (selectedDays.length === 2 && selectedDateRange.includes(day))) {
-						selectedDays = [];
-						selectedDateRange = [];
-					} else if (selectedDays.length < 2) {
-						selectedDays = [...selectedDays, day];
+	<div class="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-12 lg:grid-cols-16 gap-2 w-full mr-1">
+		{#each days as day, index (day.fullDate)}
+			{#if index === 0 || days[index - 1].month !== day.month}
+				<div
+					class="p-4 h-12 md:h-16 rounded-xl bg-secondary-500 text-white flex items-center justify-center"
+				>
+					{day.month}
+				</div>
+			{/if}
+			<div
+				class={`flex flex-col h-12 md:h-16 items-center justify-center rounded-xl ${
+					day.isBooked ? 'bg-secondary-100' : ''
+				} ${selectedDays.includes(day) ? 'bg-primary-400' : ''} ${
+					selectedDays.length === 1 && isDayUnavailable(day)
+						? 'bg-secondary-100'
+						: selectedDays.length === 2 &&
+						  hoveredDay &&
+						  selectedDateRange.includes(day) &&
+						  day === hoveredDay
+						? 'bg-error-300'
+						: selectedDays.length === 2 && !selectedDateRange.includes(day)
+						? 'bg-secondary-100'
+						: selectedDays.length === 2 && selectedDateRange.includes(day)
+						? 'bg-primary-400'
+						: selectedDays.length === 1 && selectedDateRange.includes(day)
+						? 'bg-primary-300'
+						: 'hover:bg-primary-500 cursor-pointer'
+				}`}
+				on:click={() => {
+					if (!day.isBooked && !isDayUnavailable(day)) {
+						const index = selectedDays.indexOf(day);
+						if (index !== -1 || (selectedDays.length === 2 && selectedDateRange.includes(day))) {
+							selectedDays = [];
+							selectedDateRange = [];
+						} else if (selectedDays.length < 2) {
+							selectedDays = [...selectedDays, day];
+						}
+						updateSelectedDateRange();
 					}
-					updateSelectedDateRange();
-				}
-			}}
-			on:mouseover={() => {
-				if (
-					(selectedDays.length === 1 && !day.isBooked && !isDayUnavailable(day)) ||
-					selectedDays.length === 2
-				) {
-					hoveredDay = day;
-					updateHoveredDateRange();
-				}
-			}}
-			on:mouseout={() => {
-				if (selectedDays.length === 1) {
-					hoveredDay = null;
-					selectedDateRange = [];
-				}
-			}}
-		>
-			<div>{day.date}</div>
-			<div class="text-xs">{day.day}</div>
-		</div>
-	{/each}
+				}}
+				on:mouseover={() => {
+					if (
+						(selectedDays.length === 1 && !day.isBooked && !isDayUnavailable(day)) ||
+						selectedDays.length === 2
+					) {
+						hoveredDay = day;
+						updateHoveredDateRange();
+					}
+				}}
+				on:mouseout={() => {
+					if (selectedDays.length === 1) {
+						hoveredDay = null;
+						selectedDateRange = [];
+					}
+				}}
+			>
+				<div>{day.date}</div>
+				<div class="text-xxs">{day.day}</div>
+			</div>
+		{/each}
+	</div>
 </div>

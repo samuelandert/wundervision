@@ -33,7 +33,7 @@
 		name={field.name}
 		bind:this={inputElement}
 		type="number"
-		class=" bg-white-custom w-full h-24 px-3 py-2 text-secondary-500 text-7xl ring-white focus:outline-none focus:ring-2 focus:ring-primary-500 {$errors[
+		class="bg-white-custom w-full h-16 md:h-24 px-3 py-2 text-secondary-500 text-4xl md:text-6xl ring-white focus:outline-none focus:ring-2 focus:ring-primary-500 {$errors[
 			field.name
 		]
 			? 'input-warning'
@@ -54,7 +54,7 @@
 	}
 
 	.variant-filled-secondary {
-		background-color: 0 191 255; /* Tailwind's coolGray-600 */
+		background-color: 0 191 255;
 		color: white;
 		border: none;
 		padding: 20px;

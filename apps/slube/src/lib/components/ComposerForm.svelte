@@ -218,7 +218,7 @@
 		{#if $state.matches('submitted')}
 			submitted
 		{/if}
-		<div class="flex justify-between mt-4">
+		<div class="flex justify-between mt-1 md:mt-4">
 			<div>
 				{#each $possibleActions as action (action)}
 					{#if action === 'PREV'}
