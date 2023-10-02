@@ -14,7 +14,7 @@
 		<div style="padding-bottom: 50%;" />
 		<img
 			class="absolute top-0 left-0 w-full h-full rounded-2xl object-cover"
-			src="/{image}"
+			src={image}
 			alt={name}
 		/>
 	</div>

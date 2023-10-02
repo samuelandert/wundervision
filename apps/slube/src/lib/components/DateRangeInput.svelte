@@ -76,23 +76,23 @@
 	{/if}
 	{#each days as day, index (day.fullDate)}
 		{#if index === 0 || days[index - 1].month !== day.month}
-			<div class="p-4 rounded-none bg-secondary-200 w-20 h-20 flex items-center justify-center">
+			<div class="p-4 m-1 rounded-xl bg-secondary-300 w-20 h-20 flex items-center justify-center">
 				{day.month}
 			</div>
 		{/if}
 		<div
-			class={`w-20 h-20 flex flex-col items-center justify-center rounded-none ${
-				day.isBooked ? 'bg-warning-200' : ''
-			} ${selectedDays.includes(day) ? 'bg-primary-500' : ''} ${
+			class={`w-20 h-20 flex flex-col items-center justify-center rounded-xl m-1 ${
+				day.isBooked ? 'bg-secondary-100' : ''
+			} ${selectedDays.includes(day) ? 'bg-primary-400' : ''} ${
 				selectedDays.length === 1 && isDayUnavailable(day)
-					? 'bg-warning-200'
+					? 'bg-secondary-100'
 					: selectedDays.length === 2 &&
 					  hoveredDay &&
 					  selectedDateRange.includes(day) &&
 					  day === hoveredDay
 					? 'bg-error-300'
 					: selectedDays.length === 2 && !selectedDateRange.includes(day)
-					? 'bg-gray-200'
+					? 'bg-secondary-100'
 					: selectedDays.length === 2 && selectedDateRange.includes(day)
 					? 'bg-primary-400'
 					: selectedDays.length === 1 && selectedDateRange.includes(day)

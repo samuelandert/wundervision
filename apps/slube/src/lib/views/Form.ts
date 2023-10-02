@@ -28,28 +28,28 @@ export const view = {
                                 {
                                     value: 'Neustrelitz',
                                     label: 'Neustrelitz',
-                                    image: 'neustrelitz.png',
+                                    image: 'Neustrelitz.png',
                                     description:
                                         'In Neustrelitz übernachtest Du in unseren slubes direkt am Stadthafen, zwischen Bootsstegen und typisch historischen Backsteinspeichern. Perfekt um morgens in den Zierker See zu springen'
                                 },
                                 {
                                     value: 'Krakow am See',
                                     label: 'Krakow am See',
-                                    image: 'krakow.png',
+                                    image: 'Krakow.png',
                                     description:
                                         'Übernachten an einem der schönsten Seen in Mecklenburg-Vorpommern. Direk am Krakower See gelegen, kannst du den Sonnenverlauf von der Dachterasse Deines slubes aus genießen. Ein idealer Ort zum Radfahren, Wandern und Wassersport'
                                 },
                                 {
                                     value: 'Rostock',
                                     label: 'Rostock',
-                                    image: 'rostock.png',
+                                    image: 'Rostock.png',
                                     description:
                                         'Raus aus der Stadt, rein in die Natur. Unsere slubes in Rostock bieten einen idealen Rückzugsort für alle Ruhesuchenden. Sie stehen mitten im Brandenburger Wald auf der Forellenfarm 25 Teiche'
                                 },
                                 {
                                     value: 'Greifswald',
                                     label: 'Greifswald',
-                                    image: 'greifswald.png',
+                                    image: 'Greifswald.png',
                                     description:
                                         'Küstenfeeling trifft coole Studentenstadt: Unsere slubes stehen mitten im Herzen von Greifswald am Yachtahfen mit Blick auf den Ryck. Direkt zwischen Rügen und Usedom is es nicht weit zum Osteestrand und großartigen Segelstandorten'
                                 }
