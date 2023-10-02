@@ -2,7 +2,7 @@
 	const now = new Date();
 	let days = Array.from({ length: 180 }, (_, i) => {
 		const day = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
-		const isBooked = Math.random() < 0.5;
+		const isBooked = Math.random() < 0.4;
 		return {
 			date: day.getDate(),
 			day: isBooked ? 'booked' : day.toLocaleString('default', { weekday: 'short' }),
