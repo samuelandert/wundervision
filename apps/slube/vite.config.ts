@@ -13,6 +13,7 @@ export default defineConfig({
 			mapping: {
 				testMe: `import testMe from '$lib/composables/testMe.ts'`,
 				UserSchema: `import { UserSchema } from '$lib/composables/UserSchema'`,
+				Icon: `import Icon from '@iconify/svelte';`,
 			},
 			module: {
 				svelte: ['onMount']
@@ -26,6 +27,7 @@ export default defineConfig({
 			preserveEntrySignatures: 'strict'
 		}
 	},
+
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}

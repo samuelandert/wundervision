@@ -8,7 +8,6 @@
     "build": "wunderctl generate --wundergraph-dir .",
     "check": "tsc --noEmit"
   },
-  "author": "",
   "dependencies": {
     "@wundergraph/sdk": "^0.163.3"
   },

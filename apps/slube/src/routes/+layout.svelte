@@ -13,7 +13,7 @@
 </script>
 
 <Drawer bgDrawer="bg-white" height="h-auto">
-	<Composer composer={$drawerStore.meta} />
+	<ComposeMy view={$drawerStore.meta} />
 </Drawer>
 
 <AppShell>

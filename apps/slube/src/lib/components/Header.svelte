@@ -1,12 +1,12 @@
 <script>
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	const drawerStore = getDrawerStore();
-	import { composer } from '$lib/composables/flow';
+	import { view } from '$lib/views/Form';
 
 	function openDrawer() {
 		drawerStore.open({
 			position: 'bottom',
-			meta: composer
+			meta: view
 		});
 	}
 </script>

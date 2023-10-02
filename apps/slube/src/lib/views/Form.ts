@@ -1,6 +1,6 @@
-import { UserSchema } from "./UserSchema";
+import { UserSchema } from "../composables/UserSchema";
 
-export let composer = {
+export const view = {
     id: 'FormContainer',
     layout: {
         rows: '1fr auto',
@@ -18,12 +18,7 @@ export let composer = {
                 initial: 'notValidated',
                 context: {
                     fields: [
-                        {
-                            name: 'staytime',
-                            type: 'dateRange',
-                            title: 'When do you want to visit?',
-                            description: 'Please choose your date range'
-                        },
+
                         {
                             name: 'location',
                             type: 'cardSelect',
@@ -61,23 +56,30 @@ export let composer = {
                             ]
                         },
                         {
+                            name: 'staytime',
+                            type: 'dateRange',
+                            title: 'When do you want to visit?',
+                            description: 'Please choose your date range'
+                        },
+                        {
                             name: 'guests',
                             type: 'number',
                             title: 'How many guests?',
                             description: 'Please tell us how many guests are arriving'
-                        }
+                        },
+                        {
+                            name: 'email',
+                            type: 'email',
+                            title: 'What is your email?',
+                            description: 'Please enter your email'
+                        },
                         // {
                         // 	name: 'name',
                         // 	type: 'text',
                         // 	title: 'What is your name?',
                         // 	description: 'Please enter your name'
                         // }
-                        // {
-                        // 	name: 'email',
-                        // 	type: 'email',
-                        // 	title: 'What is your email?',
-                        // 	description: 'Please enter your email'
-                        // },
+
                         // {
                         // 	name: 'about',
                         // 	type: 'textarea',

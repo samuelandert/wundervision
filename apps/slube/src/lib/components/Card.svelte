@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class={`w-full h-72 grid grid-rows-card bg-gray-100 p-4 text-secondary-500 rounded-2xl transition-colors duration-200 ${
+	class={`w-full grid grid-rows-card bg-gray-100 p-4 text-secondary-500 rounded-2xl transition-colors duration-200 ${
 		selected ? 'bg-primary-500 text-white' : 'hover:bg-primary-500 hover:text-white'
 	}`}
 >
@@ -29,6 +29,6 @@
 
 <style>
 	.grid-rows-card {
-		grid-template-rows: auto 1fr;
+		grid-template-rows: auto 1fr auto;
 	}
 </style>
