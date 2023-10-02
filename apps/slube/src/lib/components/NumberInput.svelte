@@ -28,7 +28,9 @@
 </script>
 
 <div class="input-group input-group-divider grid grid-cols-[auto,1fr,auto]">
-	<button type="button" class="variant-filled-secondary" on:click={decrement}>-</button>
+	<button type="button" class="variant-number text-white bg-secondary-300" on:click={decrement}
+		>-</button
+	>
 	<input
 		name={field.name}
 		bind:this={inputElement}
@@ -42,7 +44,9 @@
 		aria-invalid={$errors[field.name] ? 'true' : undefined}
 		{...constraints[field.name]}
 	/>
-	<button type="button" class="variant-filled-secondary" on:click={increment}>+</button>
+	<button type="button" class="variant-number text-white bg-secondary-300" on:click={increment}
+		>+</button
+	>
 </div>
 
 <style>
@@ -53,11 +57,9 @@
 		margin: 0;
 	}
 
-	.variant-filled-secondary {
-		background-color: 0 191 255;
-		color: white;
+	.variant-number {
 		border: none;
-		padding: 20px;
+		padding: 15px;
 		font-size: 30px;
 		cursor: pointer;
 	}

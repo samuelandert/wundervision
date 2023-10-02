@@ -227,8 +227,9 @@
 							on:click={() => send(action)}
 							class="btn btn-sm md:btn-base variant-filled-secondary font-semibold"
 							disabled={$state.context.currentField === 0}
-						>
-							{action}
+							><span>
+								<Icon icon="solar:alt-arrow-left-bold" class="text-white h-5" />
+							</span>
 						</button>
 					{/if}
 				{/each}
