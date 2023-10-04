@@ -70,15 +70,34 @@
 
 <div class="flex flex-wrap max-h-72 w-full md:max-h-96 overflow-y-auto">
 	{#if selectedDays.length > 0}
-		<div class="w-full text-center">
-			Selected days: {selectedDays.map((day) => day.fullDate.toLocaleDateString()).join(', ')}
+		<!-- <div class="w-full text-center">
+		
+		</div> -->
+		<div
+			class="w-full text-center bg-secondary-500 text-white text-xl font-semibold my-2 rounded-lg p-2"
+		>
+			{selectedDays.length > 1
+				? Math.abs(
+						(selectedDays[0].fullDate.getTime() - selectedDays[1].fullDate.getTime()) /
+							(1000 * 60 * 60 * 24)
+				  )
+				: 0} Night{selectedDays.length > 1 &&
+			Math.abs(
+				(selectedDays[0].fullDate.getTime() - selectedDays[1].fullDate.getTime()) /
+					(1000 * 60 * 60 * 24)
+			) > 1
+				? 's'
+				: ''}<br />
+			<span class="text-xs font-normal">
+				from {selectedDays.map((day) => day.fullDate.toLocaleDateString()).join(' to ')}
+			</span>
 		</div>
 	{/if}
 	<div class="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-12 lg:grid-cols-16 gap-2 w-full mr-1">
 		{#each days as day, index (day.fullDate)}
 			{#if index === 0 || days[index - 1].month !== day.month}
 				<div
-					class="p-4 h-12 md:h-16 rounded-xl bg-secondary-500 text-white flex items-center justify-center"
+					class="p-4 h-12 md:h-16 rounded-xl bg-secondary-400 text-white flex items-center justify-center"
 				>
 					{day.month}
 				</div>
@@ -93,13 +112,13 @@
 						  hoveredDay &&
 						  selectedDateRange.includes(day) &&
 						  day === hoveredDay
-						? 'bg-error-300'
+						? 'bg-error-400'
 						: selectedDays.length === 2 && !selectedDateRange.includes(day)
 						? 'bg-secondary-100'
 						: selectedDays.length === 2 && selectedDateRange.includes(day)
 						? 'bg-primary-400'
 						: selectedDays.length === 1 && selectedDateRange.includes(day)
-						? 'bg-primary-300'
+						? 'bg-primary-400'
 						: 'hover:bg-primary-500 cursor-pointer'
 				}`}
 				on:click={() => {

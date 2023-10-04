@@ -28,7 +28,7 @@
 </script>
 
 <div class="input-group input-group-divider grid grid-cols-[auto,1fr,auto]">
-	<button type="button" class="variant-number text-white bg-secondary-300" on:click={decrement}
+	<button type="button" class="variant-number text-white bg-secondary-400" on:click={decrement}
 		>-</button
 	>
 	<input
@@ -44,7 +44,7 @@
 		aria-invalid={$errors[field.name] ? 'true' : undefined}
 		{...constraints[field.name]}
 	/>
-	<button type="button" class="variant-number text-white bg-secondary-300" on:click={increment}
+	<button type="button" class="variant-number text-white bg-secondary-400" on:click={increment}
 		>+</button
 	>
 </div>
