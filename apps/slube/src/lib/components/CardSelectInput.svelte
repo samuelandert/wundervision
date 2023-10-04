@@ -3,12 +3,13 @@
 	import Card from './Card.svelte';
 
 	let inputElement;
+	let selectedOption = null;
 
 	export let childInput;
 
 	const { form, errors, field, constraints } = childInput;
 
-	let selectedOption = $form[field.name];
+	$: selectedOption = $form[field.name];
 
 	function selectOption(option) {
 		selectedOption = option;
@@ -39,10 +40,11 @@
 	{/each}
 </div>
 
+{JSON.stringify($form[field.name])}
+
 <select
 	name={field.name}
 	bind:this={inputElement}
-	class="text-3xl select"
 	style="display: none;"
 	bind:value={$form[field.name]}
 	aria-invalid={$errors[field.name] ? 'true' : undefined}

@@ -62,7 +62,7 @@ export const view = {
                             description: 'Please choose your date range'
                         },
                         {
-                            name: 'type',
+                            name: 'towertype',
                             type: 'cardSelect',
                             title: 'Do you want to sleep in the Home or Tower Slube?',
                             description: 'Please choose your slube',

@@ -38,9 +38,7 @@ export const UserSchema = z.object({
     guests: z.number().min(1, validationMessages.guests.min).max(2, validationMessages.guests.max),
     favoriteFood: z.enum(['apple', 'banana', 'coconut', 'peach', 'mango']).refine(value => value !== '', validationMessages.favoriteFood.invalid),
     location: z.enum(['Neustrelitz', 'Krakow am See', 'Rostock', 'Greifswald']).refine(value => value !== '', validationMessages.location.invalid),
+    towertype: z.enum(['slubehome', 'slubetower']).refine(value => value !== '', 'Towertype is required.'),
     slider: z.number().min(0, validationMessages.slider.min).max(100, validationMessages.slider.max),
     toggle: z.boolean().refine(value => typeof value === 'boolean', validationMessages.toggle.isBoolean),
-}).required({
-    name: true,
-    location: true
-});
+})
