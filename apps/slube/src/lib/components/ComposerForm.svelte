@@ -3,15 +3,6 @@
 	import { useMachine } from '@xstate/svelte';
 	import { superForm } from 'sveltekit-superforms/client';
 	import { derived, writable } from 'svelte/store';
-	import Stepper from './Stepper.svelte';
-	import CardSelectInput from './CardSelectInput.svelte';
-	import DateRangeInput from './DateRangeInput.svelte';
-	import SelectInput from './SelectInput.svelte';
-	import SliderInput from './SliderInput.svelte';
-	import TextAreaInput from './TextAreaInput.svelte';
-	import TextInput from './TextInput.svelte';
-	import ToggleInput from './ToggleInput.svelte';
-	import NumberInput from './NumberInput.svelte';
 
 	export let me;
 
@@ -140,6 +131,15 @@
 		}
 	}
 
+	function isJsonString(str) {
+		try {
+			JSON.parse(str);
+		} catch (e) {
+			return false;
+		}
+		return true;
+	}
+
 	let childInput;
 	$: {
 		childInput = {
@@ -200,23 +200,35 @@
 			</div>
 		{/if}
 		{#if $state.matches('summary')}
-			<div class="mb-4">
-				<h2 class="mb-2 text-5xl font-semibold text-center text-primary-500">Summary</h2>
-				<p class="text-2xl text-center text-secondary-500">Please verify your summary</p>
-				<dl class="list-dl">
+			<div class="py-3">
+				<h2 class="mb-2 text-lg md:text-4xl font-semibold text-center text-primary-500">Summary</h2>
+				<p class="text-sm md:text-2xl text-center text-secondary-500 mb-3">
+					Please verify your order
+				</p>
+				<dl>
 					{#each Object.entries($state.context.formData) as [key, value]}
-						<div>
-							<span class="flex-auto">
-								<dt class="text-sm text-secondary-300">{key}</dt>
-								<dd class="text-2xl text-secondary-500 font-semibold">{value}</dd>
-							</span>
-						</div>
+						<span class="flex-auto">
+							<dt class="text-xs lg:text-sm text-secondary-300">{key}</dt>
+							{#if typeof value === 'string' && isJsonString(value)}
+								{#each Object.entries(JSON.parse(value)) as [subKey, subValue]}
+									<dd class="text-sm md:text-2xl text-secondary-500 font-semibold">
+										{subKey}: {subValue}
+									</dd>
+								{/each}
+							{:else}
+								<dd class="text-sm md:text-2xl text-secondary-500 font-semibold">{value}</dd>
+							{/if}
+						</span>
 					{/each}
 				</dl>
 			</div>
 		{/if}
 		{#if $state.matches('submitted')}
-			submitted
+			<div
+				class="bg-success-500 w-full rounded-lg px-4 py-12 text-white text-center mb-2 text-xl font-semibold"
+			>
+				submitted
+			</div>
 		{/if}
 		<div class="flex justify-between mt-1 md:mt-4">
 			<div>
@@ -264,3 +276,10 @@
 		</div>
 	</form>
 </div>
+
+<style>
+	dl {
+		display: grid;
+		gap: 10px;
+	}
+</style>

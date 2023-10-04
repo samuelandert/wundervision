@@ -40,8 +40,6 @@
 	{/each}
 </div>
 
-{JSON.stringify($form[field.name])}
-
 <select
 	name={field.name}
 	bind:this={inputElement}

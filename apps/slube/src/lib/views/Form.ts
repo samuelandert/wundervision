@@ -18,7 +18,6 @@ export const view = {
                 initial: 'notValidated',
                 context: {
                     fields: [
-
                         {
                             name: 'location',
                             type: 'cardSelect',

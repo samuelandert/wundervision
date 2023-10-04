@@ -66,12 +66,26 @@
 			selectedDateRange = [];
 		}
 	}
+
+	$: if (selectedDays.length === 2) {
+		$form[field.name] = JSON.stringify({
+			start: selectedDays[0].fullDate,
+			end: selectedDays[1].fullDate
+		});
+	} else {
+		$form[field.name] = '';
+	}
 </script>
 
-{#if selectedDays.length > 0}
-	<!-- <div class="w-full text-center">
+<input
+	type="hidden"
+	name={field.name}
+	bind:value={$form[field.name]}
+	aria-invalid={$errors[field.name] ? 'true' : undefined}
+	{...constraints[field.name]}
+/>
 
-</div> -->
+{#if selectedDays.length > 0}
 	<div
 		class="w-full text-center bg-secondary-500 text-white text-md lg:text-xl font-semibold my-2 rounded-lg p-1 lg:p-2"
 	>

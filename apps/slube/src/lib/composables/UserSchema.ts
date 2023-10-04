@@ -31,6 +31,26 @@ const validationMessages = {
     },
 };
 
+function isDateString(value: any): value is string {
+    return !isNaN(Date.parse(value));
+}
+
+const dateRangeSchema = z.custom((value) => {
+    try {
+        const parsedValue = JSON.parse(value);
+        return (
+            typeof parsedValue === 'object' &&
+            parsedValue !== null &&
+            'start' in parsedValue &&
+            'end' in parsedValue &&
+            isDateString(parsedValue.start) &&
+            isDateString(parsedValue.end)
+        );
+    } catch {
+        return false;
+    }
+}, { message: 'Invalid date range format.' });
+
 export const UserSchema = z.object({
     name: z.string().nonempty('Name is required.').min(3, validationMessages.name.minLength).max(10, validationMessages.name.maxLength),
     email: z.string().email(validationMessages.email.isEmail),
@@ -41,4 +61,5 @@ export const UserSchema = z.object({
     towertype: z.enum(['slubehome', 'slubetower']).refine(value => value !== '', 'Towertype is required.'),
     slider: z.number().min(0, validationMessages.slider.min).max(100, validationMessages.slider.max),
     toggle: z.boolean().refine(value => typeof value === 'boolean', validationMessages.toggle.isBoolean),
+    staytime: z.string().nonempty('Date range is required.'),
 })
