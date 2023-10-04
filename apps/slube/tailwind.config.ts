@@ -15,6 +15,9 @@ export default {
 			},
 			gridTemplateColumns: {
 				'16': 'repeat(16, minmax(0, 1fr))',
+			},
+			maxHeight: {
+				'128': '32rem',
 			}
 		},
 	},
