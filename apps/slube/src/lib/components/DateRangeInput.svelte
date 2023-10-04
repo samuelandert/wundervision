@@ -68,31 +68,31 @@
 	}
 </script>
 
+{#if selectedDays.length > 0}
+	<!-- <div class="w-full text-center">
+
+</div> -->
+	<div
+		class="w-full text-center bg-secondary-500 text-white text-md lg:text-xl font-semibold my-2 rounded-lg p-1 lg:p-2"
+	>
+		{selectedDays.length > 1
+			? Math.abs(
+					(selectedDays[0].fullDate.getTime() - selectedDays[1].fullDate.getTime()) /
+						(1000 * 60 * 60 * 24)
+			  )
+			: 0} Night{selectedDays.length > 1 &&
+		Math.abs(
+			(selectedDays[0].fullDate.getTime() - selectedDays[1].fullDate.getTime()) /
+				(1000 * 60 * 60 * 24)
+		) > 1
+			? 's'
+			: ''}<br />
+		<span class="text-xxs lg:text-xs font-normal">
+			from {selectedDays.map((day) => day.fullDate.toLocaleDateString()).join(' to ')}
+		</span>
+	</div>
+{/if}
 <div class="flex flex-wrap max-h-72 w-full md:max-h-96 overflow-y-auto">
-	{#if selectedDays.length > 0}
-		<!-- <div class="w-full text-center">
-		
-		</div> -->
-		<div
-			class="w-full text-center bg-secondary-500 text-white text-xl font-semibold my-2 rounded-lg p-2"
-		>
-			{selectedDays.length > 1
-				? Math.abs(
-						(selectedDays[0].fullDate.getTime() - selectedDays[1].fullDate.getTime()) /
-							(1000 * 60 * 60 * 24)
-				  )
-				: 0} Night{selectedDays.length > 1 &&
-			Math.abs(
-				(selectedDays[0].fullDate.getTime() - selectedDays[1].fullDate.getTime()) /
-					(1000 * 60 * 60 * 24)
-			) > 1
-				? 's'
-				: ''}<br />
-			<span class="text-xs font-normal">
-				from {selectedDays.map((day) => day.fullDate.toLocaleDateString()).join(' to ')}
-			</span>
-		</div>
-	{/if}
 	<div class="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-12 lg:grid-cols-16 gap-2 w-full mr-1">
 		{#each days as day, index (day.fullDate)}
 			{#if index === 0 || days[index - 1].month !== day.month}
