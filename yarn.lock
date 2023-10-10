@@ -1766,7 +1766,7 @@
     util "^0.12.4"
     web-vitals "^3.0.4"
 
-"@lit-protocol/auth-helpers@2.2.61", "@lit-protocol/auth-helpers@^2.2.50", "@lit-protocol/auth-helpers@^2.2.61":
+"@lit-protocol/auth-helpers@2.2.61", "@lit-protocol/auth-helpers@^2.2.50":
   version "2.2.61"
   resolved "https://registry.yarnpkg.com/@lit-protocol/auth-helpers/-/auth-helpers-2.2.61.tgz#b1741090ae0b03c952123f4fa71523e1d604347f"
   integrity sha512-2VzwFaHwMHN4raQ5RsKfXz02KqQ2hbPHCf0GPfXify79ZAUYp/BIsOyo1mpVlVkA1moaQ0zadHAlTdcBVNCVtQ==
@@ -1775,7 +1775,7 @@
     siwe-recap "0.0.2-alpha.0"
     tslib "^2.3.0"
 
-"@lit-protocol/auth-helpers@3.0.5":
+"@lit-protocol/auth-helpers@3.0.5", "@lit-protocol/auth-helpers@^3.0.2":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@lit-protocol/auth-helpers/-/auth-helpers-3.0.5.tgz#275cd6777235052a8c62ef88bf84fc9a95a00170"
   integrity sha512-NZcG8N6ZsN3djPzLH844gaoJjypE3RrYEZzmSWzyZ8zs6cOoJg2HEVr0bQlvlQ/7BpKn6hEFHmXsYyxPxvyNiw==

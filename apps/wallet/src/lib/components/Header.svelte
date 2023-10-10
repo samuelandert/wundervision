@@ -1,14 +1,14 @@
 <script>
-	import { getDrawerStore } from '@skeletonlabs/skeleton';
-	const drawerStore = getDrawerStore();
-	import { view } from '$lib/views/Form';
+	// import { getDrawerStore } from '@skeletonlabs/skeleton';
+	// const drawerStore = getDrawerStore();
+	// import { view } from '$lib/views/Form';
 
-	function openDrawer() {
-		drawerStore.open({
-			position: 'bottom',
-			meta: view
-		});
-	}
+	// function openDrawer() {
+	// 	drawerStore.open({
+	// 		position: 'bottom',
+	// 		meta: view
+	// 	});
+	// }
 </script>
 
 <div class="relative w-full h-screen grid place-items-center">
@@ -29,8 +29,9 @@
 				is leading a fullfilling time on earth living their life at their fullest potential
 			</p>
 		</div>
-		<button class="btn variant-filled-primary btn-lg sm:btn-xl mt-6" on:click={openDrawer}>
+		<Wallet />
+		<!-- <button class="btn variant-filled-primary btn-lg sm:btn-xl mt-6" on:click={openDrawer}>
 			Sign Up
-		</button>
+		</button> -->
 	</div>
 </div>

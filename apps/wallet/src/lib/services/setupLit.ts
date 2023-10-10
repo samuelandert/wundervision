@@ -1,15 +1,12 @@
-// litProviderSetup.ts
-
 import {
     LitAuthClient,
-    GoogleProvider,
-    BaseProvider,
-    WebAuthnProvider
+    WebAuthnProvider,
 } from '@lit-protocol/lit-auth-client';
 import { ProviderType } from '@lit-protocol/constants';
 import { LitNodeClient } from '@lit-protocol/lit-node-client';
 
-let provider: BaseProvider | undefined;
+let provider: WebAuthnProvider | undefined;
+
 export async function connectProvider() {
     const litNodeClient = new LitNodeClient({
         litNetwork: 'cayenne',
@@ -24,7 +21,7 @@ export async function connectProvider() {
         litNodeClient
     });
 
-    provider = litAuthClient.initProvider<GoogleProvider>(ProviderType.Google);
+    provider = litAuthClient.initProvider<WebAuthnProvider>(ProviderType.WebAuthn);
 
     return provider;
 }

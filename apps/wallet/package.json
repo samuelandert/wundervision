@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@iconify/svelte": "^3.1.4",
-    "@lit-protocol/auth-helpers": "^2.2.61",
+    "@lit-protocol/auth-helpers": "^3.0.2",
     "@lit-protocol/constants": "^2.2.61",
     "@lit-protocol/lit-auth-client": "^2.2.61",
     "@lit-protocol/lit-node-client": "^3.0.2",
