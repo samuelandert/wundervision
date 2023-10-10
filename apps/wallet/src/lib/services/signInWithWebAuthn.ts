@@ -12,9 +12,11 @@ export const signInWithWebAuthn = async () => {
 
             if (me && me.passkey != null) {
                 const authMethod = await provider.authenticate();
+                const pkps = await provider.fetchPKPsThroughRelayer(authMethod)
+                console.log("publicKey: " + pkps[0].publicKey)
 
                 const sessionSigs = await provider.getSessionSigs({
-                    pkpPublicKey: me.passkey.pkpPublicKey,
+                    pkpPublicKey: pkps[0].publicKey,
                     authMethod,
                     sessionSigsParams: {
                         chain: 'xdai',
@@ -29,6 +31,7 @@ export const signInWithWebAuthn = async () => {
                 me = {
                     passkey: {
                         ...me.passkey,
+                        pkpPublicKey: pkps[0].publicKey,
                         sessionSigs
                     }
                 }
@@ -38,7 +41,7 @@ export const signInWithWebAuthn = async () => {
             }
 
             // Register new WebAuthn credential
-            const options = await provider.register("Samuel");
+            const options = await provider.register("Sam");
 
             // Verify registration and mint PKP through relay server
             const txHash = await provider.verifyAndMintPKPThroughRelayer(options);

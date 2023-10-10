@@ -1,7 +1,4 @@
-import {
-    LitAuthClient,
-    WebAuthnProvider,
-} from '@lit-protocol/lit-auth-client';
+import { LitAuthClient, WebAuthnProvider } from '@lit-protocol/lit-auth-client';
 import { ProviderType } from '@lit-protocol/constants';
 import { LitNodeClient } from '@lit-protocol/lit-node-client';
 
