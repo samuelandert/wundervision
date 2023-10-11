@@ -2059,6 +2059,11 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
+"@monerium/sdk@^2.3.0", "@monerium/sdk@^2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@monerium/sdk/-/sdk-2.6.1.tgz#eee6f40ae15d70533910ab12025d58c423595a71"
+  integrity sha512-RYoTEW3Or8O34uXBQDr4v1RnLY50vT3TeipvESc+GrmsldES48bnE7MFF/DZBGWe+d8nhOF5wTh1YAigG1/Z3Q==
+
 "@motionone/animation@^10.15.1", "@motionone/animation@^10.16.3":
   version "10.16.3"
   resolved "https://registry.yarnpkg.com/@motionone/animation/-/animation-10.16.3.tgz#f5b71e27fd8b88b61f983adb0ed6c8e3e89281f9"
@@ -2504,7 +2509,7 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@safe-global/api-kit@^1.3.1":
+"@safe-global/api-kit@^1.3.0", "@safe-global/api-kit@^1.3.1":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@safe-global/api-kit/-/api-kit-1.3.1.tgz#108f5ba2f3770354abcec91225cc1ae21ee417a8"
   integrity sha512-JKvCNs8p+42+N8pV2MIqoXlBLckTe5CKboVT7t9mTluuA66i5W8+Kr+B5j9D//EIU5vO7iSOOIYnJuA2ck4XRQ==
@@ -2512,6 +2517,22 @@
     "@ethersproject/abstract-signer" "^5.7.0"
     "@safe-global/safe-core-sdk-types" "^2.3.0"
     node-fetch "^2.6.6"
+
+"@safe-global/onramp-kit@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@safe-global/onramp-kit/-/onramp-kit-1.4.0.tgz#3fe5dd379462ff0892804ceb64c511b7bd4187cd"
+  integrity sha512-vfzA/APdDEnrFL7uub+8VH4pUhOc0/zeAvYOYVnrKNX1FAlyaGjnEBem1zxryeFpRRVhHQMgOwxQsHPdK6BAzw==
+  dependencies:
+    "@ethersproject/abi" "^5.7.0"
+    "@ethersproject/address" "^5.7.0"
+    "@ethersproject/bytes" "^5.7.0"
+    "@ethersproject/hash" "^5.7.0"
+    "@monerium/sdk" "^2.3.0"
+    "@safe-global/api-kit" "^1.3.0"
+    "@safe-global/protocol-kit" "^1.3.0"
+    "@safe-global/safe-core-sdk-types" "^2.3.0"
+    "@stripe/crypto" "^0.0.4"
+    "@stripe/stripe-js" "^1.52.0"
 
 "@safe-global/protocol-kit@^1.3.0":
   version "1.3.0"
@@ -2767,6 +2788,16 @@
     "@stablelib/keyagreement" "^1.0.1"
     "@stablelib/random" "^1.0.2"
     "@stablelib/wipe" "^1.0.1"
+
+"@stripe/crypto@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@stripe/crypto/-/crypto-0.0.4.tgz#51dbcb3750c75a6b8a6c8775381af82367359146"
+  integrity sha512-gcD/aG0N90ZrNVppWYf9ADPECptw6PVtF67VIeaFP7fhgd2NvNx8erkzlcvk3VIVSY+bZ6YGX7c7cASoySX74Q==
+
+"@stripe/stripe-js@^1.52.0":
+  version "1.54.2"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.54.2.tgz#0665848e22cbda936cfd05256facdfbba121438d"
+  integrity sha512-R1PwtDvUfs99cAjfuQ/WpwJ3c92+DAMy9xGApjqlWQMj0FKQabUAys2swfTRNzuYAYJh7NqK2dzcYVNkKLEKUg==
 
 "@sveltejs/adapter-auto@^2.0.0":
   version "2.1.0"
@@ -4540,6 +4571,11 @@ buffer-crc32@^0.2.5:
   resolved "https://registry.yarnpkg.com/buffer-crc32/-/buffer-crc32-0.2.13.tgz#0d333e3f00eac50aa1454abd30ef8c2a5d9a7242"
   integrity sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==
 
+buffer-equal-constant-time@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+  integrity sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==
+
 buffer-from@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
@@ -5113,6 +5149,11 @@ cross-spawn@^5.1.0:
     lru-cache "^4.0.1"
     shebang-command "^1.2.0"
     which "^1.2.9"
+
+crypto-js@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-3.2.1.tgz#9408ed6695905ae97e05e8a6ca11937819b216a7"
+  integrity sha512-fIEXOyiXnmPbPk2+q8t97VYDSo8naqvI+2v0AJeLraQzhuL/GZ2qgcRpEadVQ7r8pXwBOHVjwOdyAXYYb3DWiQ==
 
 css-tree@^2.3.1:
   version "2.3.1"
@@ -6762,6 +6803,18 @@ globrex@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
   integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
+
+gocardless-nodejs@^3.15.0:
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/gocardless-nodejs/-/gocardless-nodejs-3.15.0.tgz#dd7de611e5fbce3db800dbe7c9e4e9f8cd638a78"
+  integrity sha512-ZrAqGdL6DTlTuX3TM9KEPkEeRxdo1LM8JeM8wAE6JRHw/yyaQe0iVWF4PT6hJVLK/RBXEXd6rAhjjg40V05iKw==
+  dependencies:
+    buffer-equal-constant-time "1.0.1"
+    crypto-js "3.2.1"
+    got "^11.8.5"
+    lodash "^4.17.15"
+    qs "^6.9.1"
+    uuid "^7.0.2"
 
 gopd@^1.0.1:
   version "1.0.1"
@@ -8608,7 +8661,7 @@ lodash.xor@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.xor/-/lodash.xor-4.5.0.tgz#4d48ed7e98095b0632582ba714d3ff8ae8fb1db6"
   integrity sha512-sVN2zimthq7aZ5sPGXnSz32rZPuqcparVW50chJQe+mzTYV+IsxSsl/2gnkWWE2Of7K3myBQBqtLKOUEHJKRsQ==
 
-lodash@4.17.21, lodash@^4.17.21, lodash@^4.7.0:
+lodash@4.17.21, lodash@^4.17.15, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -10190,7 +10243,7 @@ qs@6.11.0:
   dependencies:
     side-channel "^1.0.4"
 
-qs@6.11.2:
+qs@6.11.2, qs@^6.9.1:
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.11.2.tgz#64bea51f12c1f5da1bc01496f48ffcff7c69d7d9"
   integrity sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==
@@ -12320,6 +12373,11 @@ uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^7.0.2:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.3.tgz#c5c9f2c8cf25dc0a372c4df1441c41f5bd0c680b"
+  integrity sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
 
 uuid@^9.0.0:
   version "9.0.1"

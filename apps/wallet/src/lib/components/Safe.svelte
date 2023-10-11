@@ -30,8 +30,7 @@
 			ethAdapter: ethAdapterOwner1,
 			safeAddress
 		});
-		let address = await safe.getAddress();
-		console.log('address: ' + address);
+		console.log('safe initalized');
 	});
 
 	async function fundSafe() {
@@ -90,6 +89,8 @@
 		console.log('Transaction executed:');
 		console.log(`https://gnosis.blockscout.com/tx/${receipt.transactionHash}`);
 	}
+
+
 </script>
 
 <button class="btn variant-filled" on:click={() => deploySafe(safeFactory, owner1Signer)}
