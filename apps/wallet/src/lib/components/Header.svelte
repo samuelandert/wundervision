@@ -1,16 +1,3 @@
-<script>
-	// import { getDrawerStore } from '@skeletonlabs/skeleton';
-	// const drawerStore = getDrawerStore();
-	// import { view } from '$lib/views/Form';
-
-	// function openDrawer() {
-	// 	drawerStore.open({
-	// 		position: 'bottom',
-	// 		meta: view
-	// 	});
-	// }
-</script>
-
 <div class="relative w-full h-screen grid place-items-center">
 	<img class="absolute w-full h-full object-cover" src="/dream.jpeg" alt="Dream" />
 	<div class="absolute w-full h-full bg-black bg-opacity-50" />
@@ -30,8 +17,6 @@
 			</p>
 		</div>
 		<Wallet />
-		<!-- <button class="btn variant-filled-primary btn-lg sm:btn-xl mt-6" on:click={openDrawer}>
-			Sign Up
-		</button> -->
+		<OpenModal />
 	</div>
 </div>
