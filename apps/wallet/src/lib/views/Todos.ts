@@ -1,16 +1,15 @@
 export const view = {
     id: 'Test',
     layout: {
-        columns: '300px 1fr',
         areas: `
-			"left right"
+			"main"
 		`
     },
     children: [
         {
             id: 'Todos',
             component: 'Todos',
-            slot: 'right',
+            slot: 'main',
             queries: [{ operation: 'Countries', input: { filter: { code: { eq: 'ES' } } } }],
         }
     ]

@@ -21,7 +21,7 @@
 
 <QueryClientProvider client={data.queryClient}>
 	<Drawer bgDrawer="bg-white" height="h-auto">
-		<ComposeMy view={$drawerStore.meta} />
+		<ComposeView view={$drawerStore.meta} />
 	</Drawer>
 
 	<AppShell>
