@@ -7,4 +7,4 @@
 	}
 </script>
 
-<div use:compose />
+<div use:compose class="grid h-full w-full" />
