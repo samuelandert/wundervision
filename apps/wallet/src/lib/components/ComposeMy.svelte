@@ -1,4 +1,6 @@
 <script lang="ts">
+	// import { QueryClient } from '@tanstack/svelte-query';
+	// export let queryClient: QueryClient;
 	export let view: any;
 
 	async function compose(element: HTMLElement) {

@@ -4,6 +4,7 @@
 	import { coreServices } from '$lib/composables/services';
 	import { Machine, interpret } from 'xstate';
 	import Composer from './Composer.svelte';
+	import { createQuery } from '../../lib/wundergraph';
 
 	interface IComposerLayout {
 		areas: string;
@@ -21,6 +22,7 @@
 		children?: IComposer[];
 		data?: Record<string, any>;
 		machine?: any;
+		queries?: { operation: string; input?: any }[]; //
 	}
 
 	export let composer: IComposer;
@@ -68,6 +70,23 @@
 				});
 			}
 		}
+		// Initialize queries
+		if (component.queries) {
+			component.queries.forEach((query) => {
+				const queryInstance = createQuery({
+					operationName: query.operation,
+					input: query.input
+				}); // Update this line
+				getComposerStore(component.id).update((storeValue) => ({
+					...storeValue,
+					queries: {
+						...storeValue.queries,
+						[query.operation]: queryInstance // Update this line
+					}
+				}));
+			});
+		}
+
 		getComposerStore(component.id).update((storeValue) => ({
 			...storeValue,
 			id: component.id,
