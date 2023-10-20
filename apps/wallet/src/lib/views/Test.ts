@@ -11,7 +11,7 @@ export const view = {
             id: 'Todos',
             component: 'Todos',
             slot: 'right',
-            queries: [{ operation: 'Countries', input: { filter: { code: { eq: 'DE' } } } }],
+            queries: [{ operation: 'Countries', input: { filter: { code: { eq: 'ES' } } } }],
         }
     ]
 }

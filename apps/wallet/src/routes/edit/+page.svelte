@@ -3,4 +3,3 @@
 </script>
 
 <ComposeMy {view} />
-dssasaas

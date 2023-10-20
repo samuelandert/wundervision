@@ -5,6 +5,7 @@
 	import { Machine, interpret } from 'xstate';
 	import Composer from './Composer.svelte';
 	import { createQuery } from '../../lib/wundergraph';
+	import { QueryClientProvider } from '@tanstack/svelte-query';
 
 	interface IComposerLayout {
 		areas: string;
@@ -26,6 +27,7 @@
 	}
 
 	export let composer: IComposer;
+	export let queryClient;
 
 	let layoutStyle = '';
 	let unsubscribers = [];
@@ -153,26 +155,28 @@
 	});
 </script>
 
-<div
-	class={`grid w-full h-full overflow-hidden ${composer?.layout?.style || ''}`}
-	style={layoutStyle}
->
-	{#await loadComponentAndInitializeState(composer) then Component}
-		<svelte:component this={Component} id={composer.id} me={getComposerStore(composer.id)} />
-	{/await}
-	{#if composer?.children}
-		{#each composer.children as child (child.id)}
-			<div
-				class="grid w-full h-full overflow-hidden ${composer?.layout?.style || ''}"
-				style={`grid-area: ${child.slot}`}
-			>
-				{#await loadComponentAndInitializeState(child) then ChildComponent}
-					<svelte:component this={ChildComponent} id={child.id} me={getComposerStore(child.id)} />
-					{#if child.children && child.children.length}
-						<Composer composer={child} />
-					{/if}
-				{/await}
-			</div>
-		{/each}
-	{/if}
-</div>
+<QueryClientProvider client={queryClient}>
+	<div
+		class={`grid w-full h-full overflow-hidden ${composer?.layout?.style || ''}`}
+		style={layoutStyle}
+	>
+		{#await loadComponentAndInitializeState(composer) then Component}
+			<svelte:component this={Component} id={composer.id} me={getComposerStore(composer.id)} />
+		{/await}
+		{#if composer?.children}
+			{#each composer.children as child (child.id)}
+				<div
+					class="grid w-full h-full overflow-hidden ${composer?.layout?.style || ''}"
+					style={`grid-area: ${child.slot}`}
+				>
+					{#await loadComponentAndInitializeState(child) then ChildComponent}
+						<svelte:component this={ChildComponent} id={child.id} me={getComposerStore(child.id)} />
+						{#if child.children && child.children.length}
+							<Composer composer={child} />
+						{/if}
+					{/await}
+				</div>
+			{/each}
+		{/if}
+	</div>
+</QueryClientProvider>
