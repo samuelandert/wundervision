@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { QueryClient } from '@tanstack/svelte-query';
 	import { onDestroy } from 'svelte';
+	import { isEqual } from 'lodash';
 	export let queryClient: QueryClient;
 	export let view: any;
 
 	let composerInstance;
+	let previousView;
 
 	async function compose(element: HTMLElement, view: any) {
 		if (composerInstance) {
@@ -18,10 +20,16 @@
 	}
 
 	function composeAction(element: HTMLElement, view: any) {
-		compose(element, view);
+		if (!isEqual(previousView, view)) {
+			compose(element, view);
+			previousView = { ...view };
+		}
 		return {
 			update(view: any) {
-				compose(element, view);
+				if (!isEqual(previousView, view)) {
+					compose(element, view);
+					previousView = { ...view };
+				}
 			}
 		};
 	}
