@@ -1,5 +1,5 @@
 {
-  "name": "wallet",
+  "name": "app",
   "version": "0.2.2",
   "private": true,
   "scripts": {
