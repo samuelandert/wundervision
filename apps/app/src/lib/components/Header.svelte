@@ -16,7 +16,6 @@
 				is leading a fullfilling time on earth living their life at their fullest potential
 			</p>
 		</div>
-		<Wallet />
 		<OpenModal />
 	</div>
 </div>

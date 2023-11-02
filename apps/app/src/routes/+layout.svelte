@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { Drawer, AppShell, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
-	import { view } from '$lib/views/Form';
 
 	import { QueryClientProvider } from '@tanstack/svelte-query';
 	import type { LayoutData } from './$types';
@@ -10,13 +9,6 @@
 
 	initializeStores();
 	const drawerStore = getDrawerStore();
-
-	function openDrawer() {
-		drawerStore.open({
-			position: 'bottom',
-			meta: view
-		});
-	}
 </script>
 
 <QueryClientProvider client={data.queryClient}>
