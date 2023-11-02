@@ -7,10 +7,10 @@ export const view = {
     },
     children: [
         {
-            id: 'Todos',
-            component: 'Todos',
+            id: 'Countries',
+            component: 'Countries',
             slot: 'main',
-            queries: [{ operation: 'Countries', input: { filter: { code: { eq: 'SA' } } } }],
+            queries: [{ operation: 'Countries', input: { filter: { code: { eq: 'DE' } } } }],
         }
     ]
 }

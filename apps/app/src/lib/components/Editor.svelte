@@ -1,16 +1,18 @@
 <script lang="ts">
-	import { view as initialView } from '$lib/views/Todos';
+	import { view as initialView } from '$lib/views/Countries';
 	import { writable } from 'svelte/store';
 
 	let selectedChildren = { ...initialView.children[0] }; // Create a new object
 	let view = { ...initialView }; // Create a new object
+	let selectedCode = selectedChildren.queries[0]?.input?.filter?.code?.eq || 'All';
 
 	const components = writable([
-		{ name: 'Todos', value: 'Todos' },
+		{ name: 'Countries', value: 'Countries' },
 		{ name: 'Green', value: 'Green' }
 	]);
 
 	const codes = writable([
+		{ name: 'All', value: 'All' },
 		{ name: 'Germany', value: 'DE' },
 		{ name: 'Saudi Arabia', value: 'SA' },
 		{ name: 'United States', value: 'US' },
@@ -24,15 +26,19 @@
 	}
 
 	function updateQueryCode(code) {
-		selectedChildren.queries[0].input.filter.code.eq = code;
+		if (code === 'All') {
+			delete selectedChildren.queries[0].input.filter.code;
+		} else {
+			selectedChildren.queries[0].input.filter.code = { eq: code };
+		}
 		view.children = [{ ...selectedChildren }];
+		selectedCode = selectedChildren.queries[0]?.input?.filter?.code?.eq || 'All';
 	}
 </script>
 
-<div class="h-screen w-screen flex">
-	<div class="w-1/3 h-full overflow-auto">
+<div class="h-screen w-screen flex p-10">
+	<div class="w-1/4 h-full overflow-auto">
 		<label>
-			Component:
 			<select
 				bind:value={selectedChildren.component}
 				on:change={(e) => updateChildren(e.target.value, selectedChildren.slot)}
@@ -43,11 +49,7 @@
 			</select>
 		</label>
 		<label>
-			Query Code:
-			<select
-				bind:value={selectedChildren.queries[0].input.filter.code.eq}
-				on:change={(e) => updateQueryCode(e.target.value)}
-			>
+			<select bind:value={selectedCode} on:change={(e) => updateQueryCode(e.target.value)}>
 				{#each $codes as code}
 					<option value={code.value}>{code.name}</option>
 				{/each}
@@ -55,7 +57,7 @@
 		</label>
 	</div>
 
-	<div class="w-2/3 h-full overflow-auto">
+	<div class="w-3/4 h-full overflow-auto">
 		<ComposeView {view} />
 	</div>
 </div>
