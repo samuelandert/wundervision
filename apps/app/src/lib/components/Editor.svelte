@@ -8,7 +8,8 @@
 
 	const components = writable([
 		{ name: 'Countries', value: 'Countries' },
-		{ name: 'Green', value: 'Green' }
+		{ name: 'Green', value: 'Green' },
+		{ name: 'Levels', value: 'Levels' }
 	]);
 
 	const codes = writable([
