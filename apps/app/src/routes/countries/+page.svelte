@@ -4,7 +4,7 @@
 	const countriesQuery = createQuery({
 		operationName: 'Countries',
 		input: {
-			filter: { code: { eq: 'SA' } }
+			filter: { code: { eq: 'DE' } }
 		}
 	});
 </script>

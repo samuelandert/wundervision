@@ -10,7 +10,7 @@ export const view = {
             id: 'Todos',
             component: 'Todos',
             slot: 'main',
-            queries: [{ operation: 'Countries', input: { filter: { code: { eq: 'ES' } } } }],
+            queries: [{ operation: 'Countries', input: { filter: { code: { eq: 'SA' } } } }],
         }
     ]
 }

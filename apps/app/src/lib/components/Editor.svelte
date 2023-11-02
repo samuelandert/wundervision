@@ -10,14 +10,27 @@
 		{ name: 'Green', value: 'Green' }
 	]);
 
+	const codes = writable([
+		{ name: 'Germany', value: 'DE' },
+		{ name: 'Saudi Arabia', value: 'SA' },
+		{ name: 'United States', value: 'US' },
+		{ name: 'France', value: 'FR' },
+		{ name: 'Australia', value: 'AU' },
+		{ name: 'Canada', value: 'CA' }
+	]);
+
 	function updateChildren(component, slot) {
 		view.children = [{ ...selectedChildren, component, slot }]; // Include queries when replacing the children array
+	}
+
+	function updateQueryCode(code) {
+		selectedChildren.queries[0].input.filter.code.eq = code;
+		view.children = [{ ...selectedChildren }];
 	}
 </script>
 
 <div class="h-screen w-screen flex">
 	<div class="w-1/3 h-full overflow-auto">
-		<h2>Editor</h2>
 		<label>
 			Component:
 			<select
@@ -26,6 +39,17 @@
 			>
 				{#each $components as component}
 					<option value={component.value}>{component.name}</option>
+				{/each}
+			</select>
+		</label>
+		<label>
+			Query Code:
+			<select
+				bind:value={selectedChildren.queries[0].input.filter.code.eq}
+				on:change={(e) => updateQueryCode(e.target.value)}
+			>
+				{#each $codes as code}
+					<option value={code.value}>{code.name}</option>
 				{/each}
 			</select>
 		</label>
