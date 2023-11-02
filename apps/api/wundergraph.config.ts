@@ -29,15 +29,12 @@ configureWunderGraphApplication({
     allowedOrigins: process.env.NODE_ENV === 'production'
       ? [
         'https://app.andert.me',
-        'https://wallet.andert.me',
-        'https://slube.andert.me',
       ]
       : [
         'http://localhost:3000',
         'http://127.0.0.1:3000/',
         'http://localhost:3003',
         'http://127.0.0.1:3003/',
-        // new EnvironmentVariable('WG_ALLOWED_ORIGIN')
       ]
   },
   security: {
