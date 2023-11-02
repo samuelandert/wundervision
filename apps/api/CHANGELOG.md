@@ -1,5 +1,11 @@
 # api
 
+## 0.3.0
+
+### Minor Changes
+
+- 48943db: Test
+
 ## 0.2.2
 
 ### Patch Changes

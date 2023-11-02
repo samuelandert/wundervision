@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000 --open",
@@ -30,9 +30,9 @@
     "@tanstack/svelte-query": "^4.36.1",
     "@wundergraph/svelte-query": "^0.3.18",
     "@xstate/svelte": "^2.1.0",
-    "composer-import": "^1.7.1",
+    "composer-import": "^1.8.0",
     "ethers": "5.7.2",
-    "generated-wundergraph": "^0.2.2",
+    "generated-wundergraph": "^0.3.0",
     "gocardless-nodejs": "^3.15.0",
     "monaco-editor": "^0.44.0",
     "sveltekit-superforms": "^1.7.2",

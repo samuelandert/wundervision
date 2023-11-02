@@ -1,5 +1,17 @@
 # wallet
 
+## 0.3.0
+
+### Minor Changes
+
+- 48943db: Test
+
+### Patch Changes
+
+- Updated dependencies [48943db]
+  - generated-wundergraph@0.3.0
+  - composer-import@1.8.0
+
 ## 0.2.2
 
 ### Patch Changes
