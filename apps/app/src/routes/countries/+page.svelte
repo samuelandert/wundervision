@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createQuery } from '../../lib/wundergraph';
+	import { createQuery } from '$lib/wundergraph';
 
 	const countriesQuery = createQuery({
 		operationName: 'Countries',
