@@ -4,14 +4,6 @@
 
 Automatically detect and import components/modules for <a href="https://kit.svelte.dev/">SvelteKit</a> projects.
 
-### Before
-
-<img src="screenshots/before.png" alt="Code without sveltekit-autoimport" />
-
-### After
-
-<img src="screenshots/after.png" alt="Code with sveltekit-autoimport"/>
-
 
 ## Installation
 

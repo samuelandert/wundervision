@@ -9,19 +9,19 @@
         ".svelte-kit/**",
         ".vercel/**",
         "generated-wundergraph/**",
-        "generated/**"
+        "generated/**",
+        "composer/**"
       ]
     },
     "app#build": {
       "dependsOn": [
-        "^api#build"
+        "^api#build",
+        "^composer#build"
       ],
       "outputs": [
-        ".svelte-kit/**"
+        ".svelte-kit/**",
+        "composer/**"
       ]
-    },
-    "lint": {
-      "outputs": []
     },
     "dev": {
       "cache": false

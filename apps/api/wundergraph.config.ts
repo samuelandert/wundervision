@@ -28,7 +28,7 @@ configureWunderGraphApplication({
     ...cors.allowAll,
     allowedOrigins: process.env.NODE_ENV === 'production'
       ? [
-        'https://app.andert.me',
+        'https://flywunder.fly.dev',
       ]
       : [
         'http://localhost:3000',

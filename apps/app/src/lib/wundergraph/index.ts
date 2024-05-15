@@ -1,6 +1,6 @@
 import { createSvelteClient } from '@wundergraph/svelte-query';
-import { createClient } from '../../../../../packages/generated-wundergraph/client';
-import type { Operations } from '../../../../../packages/generated-wundergraph/client';
+import { createClient } from 'generated-wundergraph';
+import type { Operations } from 'generated-wundergraph';
 
 const client = createClient();
 
