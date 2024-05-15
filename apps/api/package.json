@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "wunderctl up --wundergraph-dir .",
     "build": "wunderctl generate --wundergraph-dir .",
+    "start": "wunderctl start --wundergraph-dir=.",
     "check": "tsc --noEmit"
   },
   "dependencies": {
