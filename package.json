@@ -8,7 +8,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "generate": "turbo run generate"
+    "generate": "turbo run generate",
+    "api:build": "turbo run build --filter=api",
+    "api:start": "turbo run start --filter=api"
   },
   "trustedDependencies": [
     "@wundergraph/sdk",
