@@ -20,7 +20,7 @@
     "svelte": "^4.0.5"
   },
   "peerDependencies": {
-    "@sveltejs/kit": "^2.5.8"
+    "@sveltejs/kit": "1.30.4"
   },
   "devDependencies": {
     "jest": "^27.5.1"
